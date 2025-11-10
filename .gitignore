@@ -1,0 +1,46 @@
+# Ignore data files and outputs
+#data/*.json
+#data/*.csv
+#data/*.png
+
+# Ignore temporary and system files
+*.log
+*.tmp
+__pycache__/
+*.pyc
+.DS_Store
+
+
+
+# Ignore virtual environments
+venv/
+.env
+
+all_abstracts.json
+
+# Ignore Word documents
+*.doc
+*.docx
+
+# Ignore compressed files
+*.zip
+
+# Ignore backup folder
+backup/
+
+#backup folder for code snippets
+/backup_codesnippets/
+
+
+#ignore data folder - files are too big for git
+data/
+
+
+json_files/data/processed_results_with_flags.csv
+json_files/processed_results_with_flags_truncated.json
+
+all_abstracts_LLM.json
+#all_abstracts_LLM.csv  - 80mb
+
+
+internal_notes.txt

@@ -1,0 +1,54 @@
+pattern_index,pattern,match_count,unique_abstracts,abstract_ids
+1,policymakers?\s+should,134,132,"['SCOPUS_ID:85102291447', 'SCOPUS_ID:85041407027', 'SCOPUS_ID:84864136496', 'SCOPUS_ID:68849086742', 'SCOPUS_ID:85171127472', 'SCOPUS_ID:85162875149', 'SCOPUS_ID:85146092799', 'SCOPUS_ID:85071459539', 'SCOPUS_ID:84945290033', 'SCOPUS_ID:84929120507']"
+0,policies?\s+should,128,127,"['SCOPUS_ID:85050362607', 'SCOPUS_ID:85027697325', 'SCOPUS_ID:85130727337', 'SCOPUS_ID:85066036308', 'SCOPUS_ID:84898541017', 'SCOPUS_ID:84897854597', 'SCOPUS_ID:84861185856', 'SCOPUS_ID:85028912986', 'SCOPUS_ID:0027323817', 'SCOPUS_ID:85185561018']"
+8,interventions?\s+should\s+(focus|target|address|prioritize),54,53,"['SCOPUS_ID:85062978052', 'SCOPUS_ID:85189093713', 'SCOPUS_ID:85149694123', 'SCOPUS_ID:85135711747', 'SCOPUS_ID:85073574826', 'SCOPUS_ID:85068770012', 'SCOPUS_ID:85008146356', 'SCOPUS_ID:67649595575', 'SCOPUS_ID:29644434846', 'SCOPUS_ID:85140240286']"
+2,government\s+(must|should),44,44,"['SCOPUS_ID:85179359342', 'SCOPUS_ID:85148349798', 'SCOPUS_ID:85079372601', 'SCOPUS_ID:85127761932', 'SCOPUS_ID:33644829474', 'SCOPUS_ID:33644818412', 'SCOPUS_ID:84949238943', 'SCOPUS_ID:84880802147', 'SCOPUS_ID:0028965064', 'SCOPUS_ID:77953588726']"
+37,action\s+is\s+needed,21,21,"['SCOPUS_ID:85210176480', 'SCOPUS_ID:84920049859', 'SCOPUS_ID:0032892294', 'SCOPUS_ID:85188896640', 'SCOPUS_ID:85027833011', 'SCOPUS_ID:85151574693', 'SCOPUS_ID:85136908302', 'SCOPUS_ID:76249090324', 'SCOPUS_ID:85046797488', 'SCOPUS_ID:0036830744']"
+50,(critical|essential|imperative|necessary|important)\s+that\s+.+(policy|government|policymakers),15,15,"['SCOPUS_ID:84949527936', 'SCOPUS_ID:36949007225', 'SCOPUS_ID:85040464186', 'SCOPUS_ID:85049344685', 'SCOPUS_ID:85168604442', 'SCOPUS_ID:85118314974', 'SCOPUS_ID:85046730624', 'SCOPUS_ID:84901989847', 'SCOPUS_ID:85086584575', 'SCOPUS_ID:85074107012']"
+9,public\s+health\s+interventions?\s+should,12,12,"['SCOPUS_ID:85103429961', 'SCOPUS_ID:85021940804', 'SCOPUS_ID:85013428420', 'SCOPUS_ID:84949670932', 'SCOPUS_ID:84930210030', 'SCOPUS_ID:84916890286', 'SCOPUS_ID:84893405508', 'SCOPUS_ID:70350058669', 'SCOPUS_ID:85064317612', 'SCOPUS_ID:80054745703']"
+16,policy\s+should\s+(prioritize|focus\s+on|address),7,7,"['SCOPUS_ID:85166733005', 'SCOPUS_ID:85028849484', 'SCOPUS_ID:0036583127', 'SCOPUS_ID:84892586600', 'SCOPUS_ID:84856428200', 'SCOPUS_ID:63749090134', 'SCOPUS_ID:0031974826']"
+42,public\s+policy\s+(must|should|needs\s+to),7,7,"['SCOPUS_ID:85019122141', 'SCOPUS_ID:84949907723', 'SCOPUS_ID:59049095966', 'SCOPUS_ID:84984698429', 'SCOPUS_ID:85166783640', 'SCOPUS_ID:85062416557', 'SCOPUS_ID:0036583127']"
+4,we\s+(call\s+for|recommend|urge)\s+policy,6,6,"['SCOPUS_ID:85074549643', 'SCOPUS_ID:84960454314', 'SCOPUS_ID:80051489943', 'SCOPUS_ID:0037363545', 'SCOPUS_ID:84905011699', 'SCOPUS_ID:85074829790']"
+3,policy\s+(changes?|reforms?)\s+are\s+(needed|required|necessary),3,3,"['SCOPUS_ID:85059885430', 'SCOPUS_ID:63749112198', 'SCOPUS_ID:85177457332']"
+20,(findings|results|study)\s+should\s+inform\s+policy,2,2,"['SCOPUS_ID:85055777361', 'SCOPUS_ID:85046709029']"
+32,(laws?|regulations?|rules?)\s+should\s+be\s+(changed|revised|strengthened|enacted),2,2,"['SCOPUS_ID:0034328366', 'SCOPUS_ID:85122654600']"
+41,(national|state|federal|local)\s+policies?\s+should,2,2,"['SCOPUS_ID:85131268905', 'SCOPUS_ID:0030978027']"
+51,(urgent|pressing|important)\s+(need|call)\s+for\s+(action|change|reform|intervention),2,2,"['SCOPUS_ID:85190332071', 'SCOPUS_ID:84865544957']"
+11,(existing|current)\s+policies?\s+(are|is)\s+(inadequate|insufficient|outdated),1,1,['SCOPUS_ID:85153849040']
+24,stronger\s+policies\s+are\s+needed,1,1,['SCOPUS_ID:61849136776']
+25,public\s+health\s+policy\s+should\s+address,1,1,['SCOPUS_ID:84856428200']
+40,government\s+should\s+(regulate|intervene|act),1,1,['SCOPUS_ID:85097459923']
+44,(require|requires|requiring|requirements)\s+(are|is|should\s+be)\s+(needed|necessary|implemented),1,1,['SCOPUS_ID:79957618065']
+45,(ban|bans|banning|banned)\s+on\s+.+\s+should\s+be\s+considered,1,1,['SCOPUS_ID:84898049119']
+46,health\s+(system|care|policy|insurance)\s+(reform|changes?)\s+(are|is)\s+(needed|necessary|required),1,1,['SCOPUS_ID:63749112198']
+48,(social|economic|welfare|housing|education)\s+policies?\s+should,1,1,['SCOPUS_ID:85100425535']
+52,policy\s+efforts?\s+should\s+focus\s+on,1,1,['SCOPUS_ID:85178558026']
+5,we\s+call\s+(on|upon)\s+policymakers,0,0,[]
+6,we\s+call\s+for\s+government\s+action,0,0,[]
+7,(urgent|important)\s+need\s+for\s+policy\s+(action|change|reform),0,0,[]
+10,policy\s+interventions?\s+(are\s+necessary|should\s+be\s+implemented),0,0,[]
+12,policy\s+has\s+(failed|not\s+been\s+effective),0,0,[]
+13,policy\s+is\s+(failing|ineffective|inadequate),0,0,[]
+14,policy\s+should\s+be\s+(reversed|changed|improved|strengthened),0,0,[]
+15,policy\s+must\s+align\s+with\s+(scientific|ethical)\s+principles,0,0,[]
+17,government\s+has\s+(a\s+duty|an\s+obligation)\s+to\s+implement\s+policy,0,0,[]
+18,government\s+should\s+(enact|pass|implement|fund)\s+policies?,0,0,[]
+19,legislation\s+must\s+be\s+introduced\s+to\s+(address|tackle),0,0,[]
+21,this\s+study\s+(shows|demonstrates|indicates)\s+(the\s+need|a\s+need)\s+for\s+policy\s+change,0,0,[]
+22,our\s+results\s+(support|justify|warrant)\s+policy\s+interventions,0,0,[]
+23,regulatory\s+framework\s+(should|must|needs\s+to)\s+be\s+(changed|revised),0,0,[]
+26,action\s+is\s+needed\s+to\s+(change|reform|improve)\s+policy,0,0,[]
+27,tax(ation)?\s+(policies?|measures?|reforms?)\s+(should|must|needs?\s+to)\s+be,0,0,[]
+28,tax(es)?\s+should\s+be\s+(raised|lowered|implemented|introduced|reconsidered),0,0,[]
+29,tax\s+incentives?\s+(are|is)\s+(needed|required|necessary),0,0,[]
+30,(sin|sugar|tobacco|alcohol|carbon)\s+tax(es)?\s+should\s+be\s+(implemented|increased|considered),0,0,[]
+31,legal\s+framework\s+(should|must|needs\s+to)\s+be\s+(established|changed|revised),0,0,[]
+33,(legal|regulatory)\s+changes?\s+are\s+(needed|necessary|required),0,0,[]
+34,legislative\s+action\s+is\s+(needed|required|necessary),0,0,[]
+35,(is|are)\s+a\s+need\s+for\s+(policy|legislative|regulatory|government)\s+(action|intervention|reform),0,0,[]
+36,(clear|strong|compelling)\s+case\s+for\s+(policy|government)\s+intervention,0,0,[]
+38,(there\s+is|it\s+is)\s+time\s+to\s+(implement|change|reconsider)\s+policies?,0,0,[]
+39,government\s+interventions?\s+(are|is)\s+(needed|necessary|required),0,0,[]
+43,(mandate|mandates|mandating|mandatory)\s+(are|is|should\s+be)\s+(needed|necessary|required|implemented),0,0,[]
+47,health\s+system\s+should\s+be\s+(reformed|changed|improved),0,0,[]
+49,(social|economic|welfare)\s+policy\s+reforms?\s+(are|is)\s+(needed|necessary|required),0,0,[]

@@ -1,0 +1,28 @@
+pattern_index,pattern,match_count,unique_abstracts,abstract_ids
+1,policymakers? should,134,132,"['SCOPUS_ID:85102291447', 'SCOPUS_ID:85041407027', 'SCOPUS_ID:84864136496', 'SCOPUS_ID:68849086742', 'SCOPUS_ID:85171127472', 'SCOPUS_ID:85162875149', 'SCOPUS_ID:85146092799', 'SCOPUS_ID:85071459539', 'SCOPUS_ID:84945290033', 'SCOPUS_ID:84929120507']"
+0,policies? should,128,127,"['SCOPUS_ID:85050362607', 'SCOPUS_ID:85027697325', 'SCOPUS_ID:85130727337', 'SCOPUS_ID:85066036308', 'SCOPUS_ID:84898541017', 'SCOPUS_ID:84897854597', 'SCOPUS_ID:84861185856', 'SCOPUS_ID:85028912986', 'SCOPUS_ID:0027323817', 'SCOPUS_ID:85185561018']"
+8,interventions? should (focus|target|address|prioritize),54,53,"['SCOPUS_ID:85062978052', 'SCOPUS_ID:85189093713', 'SCOPUS_ID:85149694123', 'SCOPUS_ID:85135711747', 'SCOPUS_ID:85073574826', 'SCOPUS_ID:85068770012', 'SCOPUS_ID:85008146356', 'SCOPUS_ID:67649595575', 'SCOPUS_ID:29644434846', 'SCOPUS_ID:85140240286']"
+2,government (must|should),44,44,"['SCOPUS_ID:85179359342', 'SCOPUS_ID:85148349798', 'SCOPUS_ID:85079372601', 'SCOPUS_ID:85127761932', 'SCOPUS_ID:33644829474', 'SCOPUS_ID:33644818412', 'SCOPUS_ID:84949238943', 'SCOPUS_ID:84880802147', 'SCOPUS_ID:0028965064', 'SCOPUS_ID:77953588726']"
+9,public health interventions? should,12,12,"['SCOPUS_ID:85103429961', 'SCOPUS_ID:85021940804', 'SCOPUS_ID:85013428420', 'SCOPUS_ID:84949670932', 'SCOPUS_ID:84930210030', 'SCOPUS_ID:84916890286', 'SCOPUS_ID:84893405508', 'SCOPUS_ID:70350058669', 'SCOPUS_ID:85064317612', 'SCOPUS_ID:80054745703']"
+16,policy should (prioritize|focus on|address),7,7,"['SCOPUS_ID:85166733005', 'SCOPUS_ID:85028849484', 'SCOPUS_ID:0036583127', 'SCOPUS_ID:84892586600', 'SCOPUS_ID:84856428200', 'SCOPUS_ID:63749090134', 'SCOPUS_ID:0031974826']"
+4,we (call for|recommend|urge) policy,6,6,"['SCOPUS_ID:85074549643', 'SCOPUS_ID:84960454314', 'SCOPUS_ID:80051489943', 'SCOPUS_ID:0037363545', 'SCOPUS_ID:84905011699', 'SCOPUS_ID:85074829790']"
+3,policy (changes?|reforms?) are (needed|required|necessary),3,3,"['SCOPUS_ID:85059885430', 'SCOPUS_ID:63749112198', 'SCOPUS_ID:85177457332']"
+20,(findings|results|study) should inform policy,2,2,"['SCOPUS_ID:85055777361', 'SCOPUS_ID:85046709029']"
+11,(existing|current) policies? (are|is) (inadequate|insufficient|outdated),1,1,['SCOPUS_ID:85153849040']
+24,stronger policies are needed,1,1,['SCOPUS_ID:61849136776']
+25,public health policy should address,1,1,['SCOPUS_ID:84856428200']
+5,we call (on|upon) policymakers,0,0,[]
+6,we call for government action,0,0,[]
+7,(urgent|important) need for policy (action|change|reform),0,0,[]
+10,policy interventions? (are necessary|should be implemented),0,0,[]
+12,policy has (failed|not been effective),0,0,[]
+13,policy is (failing|ineffective|inadequate),0,0,[]
+14,policy should be (reversed|changed|improved|strengthened),0,0,[]
+15,policy must align with (scientific|ethical) principles,0,0,[]
+17,government has (a duty|an obligation) to implement policy,0,0,[]
+18,government should (enact|pass|implement|fund) policies?,0,0,[]
+19,legislation must be introduced to (address|tackle),0,0,[]
+21,this study (shows|demonstrates|indicates) (the need|a need) for policy change,0,0,[]
+22,our results (support|justify|warrant) policy interventions,0,0,[]
+23,regulatory framework (should|must|needs to) be (changed|revised),0,0,[]
+26,action is needed to (change|reform|improve) policy,0,0,[]

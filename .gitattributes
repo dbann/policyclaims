@@ -1,0 +1,4 @@
+# Auto detect text files and perform LF normalization
+* text=auto
+json_files/processed_scopus_results.json filter=lfs diff=lfs merge=lfs -text
+json_files/processed_results_with_flags.json filter=lfs diff=lfs merge=lfs -text

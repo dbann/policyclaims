@@ -1,0 +1,33 @@
+pattern_index,pattern,match_count,unique_abstracts,abstract_ids
+3,policy\s+(makers|decisions|interventions|recommendations)\s+should,169,164,"['SCOPUS_ID:84858708363', 'SCOPUS_ID:0031972566', 'SCOPUS_ID:85062978052', 'SCOPUS_ID:85103270727', 'SCOPUS_ID:85013149590', 'SCOPUS_ID:85186684494', 'SCOPUS_ID:85092383768', 'SCOPUS_ID:1842527965', 'SCOPUS_ID:2442644990', 'SCOPUS_ID:85183803908']"
+1,policymakers?\s+should,134,132,"['SCOPUS_ID:85102291447', 'SCOPUS_ID:85041407027', 'SCOPUS_ID:84864136496', 'SCOPUS_ID:68849086742', 'SCOPUS_ID:85171127472', 'SCOPUS_ID:85162875149', 'SCOPUS_ID:85146092799', 'SCOPUS_ID:85071459539', 'SCOPUS_ID:84945290033', 'SCOPUS_ID:84929120507']"
+0,policies\s+should,128,127,"['SCOPUS_ID:85050362607', 'SCOPUS_ID:85027697325', 'SCOPUS_ID:85130727337', 'SCOPUS_ID:85066036308', 'SCOPUS_ID:84898541017', 'SCOPUS_ID:84897854597', 'SCOPUS_ID:84861185856', 'SCOPUS_ID:85028912986', 'SCOPUS_ID:0027323817', 'SCOPUS_ID:85185561018']"
+4,it\s+is\s+(critical|essential|imperative|necessary)\s+that,51,51,"['SCOPUS_ID:84949527936', 'SCOPUS_ID:84913585330', 'SCOPUS_ID:77955478639', 'SCOPUS_ID:0037318454', 'SCOPUS_ID:85040464186', 'SCOPUS_ID:85038119480', 'SCOPUS_ID:85013466868', 'SCOPUS_ID:84871323457', 'SCOPUS_ID:84857211309', 'SCOPUS_ID:40949151583']"
+28,action is needed,21,21,"['SCOPUS_ID:85210176480', 'SCOPUS_ID:84920049859', 'SCOPUS_ID:0032892294', 'SCOPUS_ID:85188896640', 'SCOPUS_ID:85027833011', 'SCOPUS_ID:85151574693', 'SCOPUS_ID:85136908302', 'SCOPUS_ID:76249090324', 'SCOPUS_ID:85046797488', 'SCOPUS_ID:0036830744']"
+20,policy .* (should prioritize|must focus on|must address),19,19,"['SCOPUS_ID:85063445528', 'SCOPUS_ID:85136069907', 'SCOPUS_ID:84922468106', 'SCOPUS_ID:85129781424', 'SCOPUS_ID:85102328071', 'SCOPUS_ID:85076082574', 'SCOPUS_ID:85074623893', 'SCOPUS_ID:79953801002', 'SCOPUS_ID:85182497140', 'SCOPUS_ID:85165674213']"
+12,policy .* should (be reversed|be changed|be improved|be reconsidered|be strengthened),8,8,"['SCOPUS_ID:85166733005', 'SCOPUS_ID:84924548890', 'SCOPUS_ID:84859650884', 'SCOPUS_ID:74049146377', 'SCOPUS_ID:85085678029', 'SCOPUS_ID:85069647522', 'SCOPUS_ID:85056812023', 'SCOPUS_ID:85007206653']"
+2,government\s+must,5,5,"['SCOPUS_ID:59449104350', 'SCOPUS_ID:84862496235', 'SCOPUS_ID:85085639270', 'SCOPUS_ID:0034921581', 'SCOPUS_ID:85088024651']"
+15,policy .* (is failing|is inadequate|requires revision|needs immediate reform),2,2,"['SCOPUS_ID:85056743681', 'SCOPUS_ID:85071228446']"
+24,policy .* (has failed|has not been effective|is ineffective),2,2,"['SCOPUS_ID:0036852206', 'SCOPUS_ID:85096764931']"
+31,(there is|it is) an? (urgent|immediate|critical|essential|vital) need for .* policy.*,2,2,"['SCOPUS_ID:85099703954', 'SCOPUS_ID:85100023333']"
+7,policy\s+changes\s+are\s+needed,1,1,['SCOPUS_ID:63749112198']
+5,we\s+(must|recommend|urge|call on)\s+policymakers?,0,0,[]
+6,we\s+call\s+for\s+government\s+action,0,0,[]
+8,urgent\s+(policy|legislative)\s+reform\s+is\s+required,0,0,[]
+9,"to\s+achieve\s+better\s+(health|equity|outcomes),\s+policy\s+must\s+change",0,0,[]
+10,(urgent|pressing|important)\s+(need|call)\s+for\s+policy\s+action,0,0,[]
+11,there\s+is\s+a\s+(clear|strong|urgent|compelling)\s+need\s+for\s+policy\s+(change|reform|intervention),0,0,[]
+13,we strongly (recommend|urge|advocate) for .+ policy,0,0,[]
+14,government must (take action|respond|intervene) regarding .+ policy,0,0,[]
+16,legislation must be introduced to (address|tackle|combat) .+,0,0,[]
+17,existing policy .* (is outdated|is insufficient|must be overhauled),0,0,[]
+18,policy .* must align with (scientific|ethical|human rights) principles,0,0,[]
+19,immediate (legislative|government) action is required to (prevent|mitigate|resolve),0,0,[]
+21,research findings (should|must) inform policy decisions,0,0,[]
+22,evidence-based policy is necessary to (improve|prevent|reduce|increase),0,0,[]
+23,government has a (duty|obligation) to implement policy changes,0,0,[]
+25,bold policy action is needed,0,0,[]
+26,policies that (increase|worsen|exacerbate) inequalities must be reconsidered,0,0,[]
+27,this study underscores the (urgent|critical|pressing) need for policy changes,0,0,[]
+29,policy\s+should\s+be\s+(changed|updated|revised|strengthened|weakened).*,0,0,[]
+30,government\s+should\s+(enact|pass|implement|fund).*\s+policy.*,0,0,[]

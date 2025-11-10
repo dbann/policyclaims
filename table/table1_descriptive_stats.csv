@@ -1,0 +1,35 @@
+Row,1990-1999,2000-2009,2010-2019,2020-2024,All years
+"Number of articles, N",10436,12529,15464,7378,45807
+"Number of unique journals, N",9,9,10,10,10
+"Words in abstracts, mean (SD)",205.5 (67.5),215.9 (55.2),221.0 (52.0),238.4 (57.4),218.9 (58.5)
+"Papers with keywords included, %",49.4,60.6,45.1,57.8,52.4
+"Countries of corresponding author, N",112,118,121,104,153
+"Policy claims, N (%)",1841 (17.6),2857 (22.8),4394 (28.4),2643 (35.8),11735 (25.6)
+  All journals/countries,17.6,22.8,28.4,35.8,25.6
+Journals,,,,,
+  Epidemiology,1.2,4.1,4.5,5.3,3.7
+  European Journal Of Epidemiology,19.4,15.3,10.0,14.3,14.4
+  American Journal Of Epidemiology,8.2,8.6,11.1,15.6,9.9
+  International Journal Of Epidemiology,15.3,20.0,16.4,20.0,17.4
+  Journal Of Epidemiology And Community Health,20.8,25.9,30.5,41.1,28.8
+  European Journal Of Public Health,28.1,33.5,40.4,45.2,38.7
+  Preventive Medicine,25.1,30.3,38.1,45.2,35.7
+  American Journal Of Public Health,24.5,33.7,38.6,46.2,33.7
+  American Journal Of Preventive Medicine,31.3,37.2,35.9,47.2,38.1
+  The Lancet Public Health,N/A,N/A,59.1,64.1,62.5
+Countries,,,,,
+  Norway,8.5,6.3,14.5,16.9,10.8
+  Japan,9.0,17.3,17.6,18.5,16.0
+  Denmark,12.8,9.1,11.3,24.9,13.4
+  Sweden,14.0,15.2,21.9,27.4,18.7
+  Germany,19.5,17.5,16.5,28.9,19.5
+  Finland,10.6,18.7,25.8,30.5,20.2
+  China,11.4,16.8,23.3,33.0,25.8
+  Netherlands,14.6,22.1,25.1,34.2,22.8
+  United kingdom,16.6,23.1,25.5,34.3,24.7
+  Spain,16.2,24.6,26.8,34.4,25.3
+  France,17.0,19.9,25.3,34.5,23.5
+  Canada,16.9,23.1,29.9,34.8,26.9
+  United states,18.2,24.1,30.5,37.6,26.9
+  Australia,23.6,26.4,29.7,40.1,29.7
+  Italy,14.9,19.7,36.0,43.5,23.7
