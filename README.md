@@ -2,7 +2,7 @@
 ## Overview
 
 The paper analyzes 45,808 abstracts from ten Epidemiology and Public Health journals and classifies whether the abstract contains a policy claim. 
-The objective is descriptive. The study quantifies trends in the prevalence of policy claims by time, country, journal, field, and study design, with classification performed using a large language model plus human validation. 
+The objective is descriptive. The study quantifies trends in the prevalence of policy claims by time, country, journal, field, and study design, with classification performed using a large language model plus human validation.
 
 ---
 
@@ -23,9 +23,16 @@ Analytic outputs
 - Primary measures: Prevalence of policy claims by year, country, journal, field, study design, and keywords.
 - Deliverables: Summary tables and figures suitable for the manuscript and supplement.
 
+## Data availability
+Due to licensing restrictions, the full set of Scopus abstracts cannot be shared; not all publishers enable free sharing of abstracts, see https://i4oa.org.  
+
+Derived datasets containing publicly available bibliographic metadata (DOI, title, journal, publication year, keywords, and corresponding author country) and large-language-model classifications are provided in the derived_data/ directory, together with all analysis code in code/. Researchers with Scopus access can reproduce the complete corpus using the included identifiers.
+
 ---
 
 ## File Structure
+
+Note that we
 
 ```
 ├── README.md
