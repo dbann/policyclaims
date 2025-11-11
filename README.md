@@ -47,7 +47,10 @@ Note that we
 |   └── human_review.xlsx
 |
 ├── data
-│   ├── json_files
+│   ├── json_files # not publicly available
+|
+├── derived_data 
+│   ├── csv file # publicly available
 |
 ├── figures                        
 |
