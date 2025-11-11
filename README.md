@@ -47,7 +47,7 @@ Note that we
 |   └── human_review.xlsx
 |
 ├── data
-│   ├── json_files # not publicly available
+│   ├── json_files # not publicly available - requires SCOPUS access 
 |
 ├── derived_data 
 │   ├── csv file # publicly available
