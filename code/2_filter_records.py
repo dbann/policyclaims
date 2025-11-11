@@ -118,6 +118,20 @@ def process_file(in_path: Path, out_path: Path, log_path: Path | None) -> None:
     summary = ", ".join(f"{k}={v}" for k, v in sorted(counts.items())) or "none"
     print(f"[filter] {in_path.name}: kept={len(kept)} dropped={len(dropped)} ({summary}) -> {out_path.name}")
 
+def _norm(s) -> str:
+    # Coerce common non-string types to a single string
+    if s is None:
+        s = ""
+    elif isinstance(s, (list, tuple, set)):
+        s = " ".join(str(x) for x in s if x is not None)
+    elif isinstance(s, dict):
+        s = " ".join(str(v) for v in s.values() if v is not None)
+    elif not isinstance(s, str):
+        s = str(s)
+
+    s = unicodedata.normalize("NFKC", s)
+    return re.sub(r"\s+", " ", s).strip()
+    
 def main():
     ap = argparse.ArgumentParser(description="Standalone filter for abstract records.")
     ap.add_argument("--in", dest="in_file", type=Path, help="Input JSON file (list of records).")
