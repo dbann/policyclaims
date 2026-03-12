@@ -28,6 +28,9 @@ Due to licensing restrictions, the full set of Scopus abstracts cannot be shared
 
 Derived datasets containing publicly available bibliographic metadata (DOI, title, journal, publication year, keywords, and corresponding author country) and large-language-model classifications are provided in the derived_data/ directory, together with all analysis code in code/. Researchers with Scopus access can reproduce the complete corpus using the included identifiers.
 
+## Cost and time to process
+The cost and time to process such a large number of abstracts are dependent on the LLM compute / API costs; for the Deepseek API, for example, the analysis incurred ~$3 and ~10 hours of processing time. Since Deepseek is open-weight, this or other open-weight models can be run on local hardware with sufficiently high RAM. 
+
 ---
 
 ## File Structure
