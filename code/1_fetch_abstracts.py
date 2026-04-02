@@ -6,26 +6,35 @@
 
 #import necessary libraries
 import argparse
-import requests
-import time
 import json
 import os
 import re
+import time
 from pathlib import Path
+
+import requests
 
 from dotenv import load_dotenv
 load_dotenv()
 
 SCOPUS_API_KEY = os.getenv("SCOPUS_API_KEY")
 INST_TOKEN = os.getenv("INST_TOKEN", "")
-print("SCOPUS_API_KEY assigned:", SCOPUS_API_KEY)
+print("SCOPUS_API_KEY assigned:", bool(SCOPUS_API_KEY))
 
 SCOPUS_API_URL = "https://api.elsevier.com/content/search/scopus"
-JSON_DIR = Path("json_files")
-JSON_DIR.mkdir(exist_ok=True)
+ROOT = Path(__file__).resolve().parents[1]
+JSON_DIR = ROOT / "data" / "json_files"
+JSON_DIR.mkdir(parents=True, exist_ok=True)
 
 # Lower this if you risk hitting rate limits
 PAUSE_SECONDS = 0.2  
+
+
+def build_headers():
+    headers = {"X-ELS-APIKey": SCOPUS_API_KEY, "Accept": "application/json"}
+    if INST_TOKEN:
+        headers["X-ELS-Insttoken"] = INST_TOKEN
+    return headers
 
 # Map Scopus "ID" or custom ID to ISSN + an abbreviation
 JOURNAL_ISSNS = {
@@ -74,7 +83,7 @@ def fetch_total_results(issn, year):
     We do this by specifying the year in the query: PUBYEAR = year
     """
     query = f"ISSN({issn}) AND PUBYEAR = {year} AND DOCTYPE(ar)"
-    headers = {"X-ELS-APIKey": SCOPUS_API_KEY, "Accept": "application/json"}
+    headers = build_headers()
     params = {
         "query": query,
         "count": 1,           # just need minimal response
@@ -100,7 +109,7 @@ def fetch_scopus_works_for_year(issn, year, cursor="*"):
     all_year_records = []
     while True:
         query = f"ISSN({issn}) AND PUBYEAR = {year} AND DOCTYPE(ar)"
-        headers = {"X-ELS-APIKey": SCOPUS_API_KEY, "Accept": "application/json"}
+        headers = build_headers()
         params = {
             "query": query,
             "cursor": cursor,
@@ -149,9 +158,9 @@ def process_scopus_work(entry):
         journal = entry.get("prism:publicationName", "")
         abstract = entry.get("dc:description", "")
         affiliations = entry.get('affiliation', [])
-        country = "Unknown"
+        first_affiliation_country = "Unknown"
         if affiliations:
-            country = affiliations[0].get('affiliation-country', 'Unknown')
+            first_affiliation_country = affiliations[0].get('affiliation-country', 'Unknown')
 
         # Keywords
         keywords = entry.get('authkeywords', '')
@@ -172,7 +181,9 @@ def process_scopus_work(entry):
             "keywords": keywords,
             "abstract": abstract,
             "article_type": entry.get("subtypeDescription", "").lower(),
-            "corresponding_author_country": country,
+            # Historical field name retained for downstream compatibility.
+            # The actual value comes from the first listed affiliation in Scopus metadata.
+            "corresponding_author_country": first_affiliation_country,
             "cited_by_count": cited_by
         }
     except Exception as e:
