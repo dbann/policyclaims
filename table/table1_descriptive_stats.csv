@@ -6,7 +6,7 @@ Row,1990-1999,2000-2009,2010-2019,2020-2024,All years
 "Countries of corresponding author, N",112,118,121,104,153
 "Policy claims, N (%)",1841 (17.6),2857 (22.8),4394 (28.4),2643 (35.8),11735 (25.6)
   All journals/countries,17.6,22.8,28.4,35.8,25.6
-Journals,,,,,
+"Journals, policy claim rate (%)",,,,,
   Epidemiology,1.2,4.1,4.5,5.3,3.7
   European Journal Of Epidemiology,19.4,15.3,10.0,14.3,14.4
   American Journal Of Epidemiology,8.2,8.6,11.1,15.6,9.9
@@ -17,7 +17,7 @@ Journals,,,,,
   American Journal Of Public Health,24.5,33.7,38.6,46.2,33.7
   American Journal Of Preventive Medicine,31.3,37.2,35.9,47.2,38.1
   The Lancet Public Health,N/A,N/A,59.1,64.1,62.5
-Countries,,,,,
+"Countries (first author), policy claim rate (%)",,,,,
   Norway,8.5,6.3,14.5,16.9,10.8
   Japan,9.0,17.3,17.6,18.5,16.0
   Denmark,12.8,9.1,11.3,24.9,13.4
