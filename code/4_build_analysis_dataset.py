@@ -13,10 +13,9 @@ RAW_JSON_DIR = ROOT / "data" / "json_files"
 FILTER_SCRIPT = Path(__file__).resolve().parent / "2_filter_records.py"
 LLM_LABELS_CSV = ROOT / "data" / "json_files" / "filtered" / "all_abstracts_LLM.csv"
 ANALYSIS_DIR = ROOT / "data" / "analysis"
-DERIVED_DIR = ROOT / "derived_data"
 
 ANALYSIS_CSV = ANALYSIS_DIR / "analysis_dataset.csv"
-MINIMAL_EXPORT_CSV = DERIVED_DIR / "policy_claims_minimal.csv"
+MINIMAL_EXPORT_CSV = ANALYSIS_DIR / "policy_claims_minimal.csv"
 
 EXPECTED_COLUMNS = [
     "scopus_id",
