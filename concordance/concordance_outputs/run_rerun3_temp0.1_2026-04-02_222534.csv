@@ -1,0 +1,201 @@
+id,scopus_id,doi,title,prompt_name,prompt_hash,model,temperature,llm_output,llm_label
+,,,,rerun3,81ef8d9ef044,deepseek-chat,0.1,"{""policy_claim"": false}",NO
+,,,,rerun3,81ef8d9ef044,deepseek-chat,0.1,"{""policy_claim"": false}",NO
+,,,,rerun3,81ef8d9ef044,deepseek-chat,0.1,"{""policy_claim"": false}",NO
+,,,,rerun3,81ef8d9ef044,deepseek-chat,0.1,"{""policy_claim"": false}",NO
+,,,,rerun3,81ef8d9ef044,deepseek-chat,0.1,"{""policy_claim"": false}",NO
+,,,,rerun3,81ef8d9ef044,deepseek-chat,0.1,"{""policy_claim"": false}",NO
+,,,,rerun3,81ef8d9ef044,deepseek-chat,0.1,"{""policy_claim"": false}",NO
+,,,,rerun3,81ef8d9ef044,deepseek-chat,0.1,"{""policy_claim"": false}",NO
+,,,,rerun3,81ef8d9ef044,deepseek-chat,0.1,"{""policy_claim"": false}",NO
+,,,,rerun3,81ef8d9ef044,deepseek-chat,0.1,"{""policy_claim"": false}",NO
+,,,,rerun3,81ef8d9ef044,deepseek-chat,0.1,"{""policy_claim"": false}",NO
+,,,,rerun3,81ef8d9ef044,deepseek-chat,0.1,"{""policy_claim"": false}",NO
+,,,,rerun3,81ef8d9ef044,deepseek-chat,0.1,"{""policy_claim"": false}",NO
+,,,,rerun3,81ef8d9ef044,deepseek-chat,0.1,"{""policy_claim"": false}",NO
+,,,,rerun3,81ef8d9ef044,deepseek-chat,0.1,"{""policy_claim"": false}",NO
+,,,,rerun3,81ef8d9ef044,deepseek-chat,0.1,"{""policy_claim"": false}",NO
+,,,,rerun3,81ef8d9ef044,deepseek-chat,0.1,"{""policy_claim"": false}",NO
+,,,,rerun3,81ef8d9ef044,deepseek-chat,0.1,"{""policy_claim"": false}",NO
+,,,,rerun3,81ef8d9ef044,deepseek-chat,0.1,"{""policy_claim"": false}",NO
+,,,,rerun3,81ef8d9ef044,deepseek-chat,0.1,"{""policy_claim"": false}",NO
+,,,,rerun3,81ef8d9ef044,deepseek-chat,0.1,"{""policy_claim"": false}",NO
+,,,,rerun3,81ef8d9ef044,deepseek-chat,0.1,"{""policy_claim"": false}",NO
+,,,,rerun3,81ef8d9ef044,deepseek-chat,0.1,"{""policy_claim"": false}",NO
+,,,,rerun3,81ef8d9ef044,deepseek-chat,0.1,"{""policy_claim"": false}",NO
+SCOPUS_ID:0025027050,SCOPUS_ID:0025027050,,,rerun3,81ef8d9ef044,deepseek-chat,0.1,"{""policy_claim"": false}",NO
+SCOPUS_ID:0025121054,SCOPUS_ID:0025121054,10.2105/AJPH.80.9.1101,The effects of workplace health promotion on absenteeism and employment costs in a large industrial population,rerun3,81ef8d9ef044,deepseek-chat,0.1,"{""policy_claim"": false}",NO
+SCOPUS_ID:0025573024,SCOPUS_ID:0025573024,10.1093/ije/19.4.953,Habitual dietary intake and glucose tolerance in euglycaemic men: The zutphen study,rerun3,81ef8d9ef044,deepseek-chat,0.1,"{""policy_claim"": false}",NO
+SCOPUS_ID:0025918863,SCOPUS_ID:0025918863,10.2105/AJPH.81.1.53,"AIDS-related knowledge, sexual behavior, and condom use among men and women in Kinshasa, Zaire",rerun3,81ef8d9ef044,deepseek-chat,0.1,"{""policy_claim"": false}",NO
+SCOPUS_ID:0026733346,SCOPUS_ID:0026733346,10.1093/oxfordjournals.aje.a116486,Childhood weight and growth rate as predictors of adult mortality,rerun3,81ef8d9ef044,deepseek-chat,0.1,"{""policy_claim"": true}",YES
+SCOPUS_ID:0026747758,SCOPUS_ID:0026747758,10.2105/AJPH.82.8.1133,Does equal socioeconomic status in Black and White men mean equal risk of mortality?,rerun3,81ef8d9ef044,deepseek-chat,0.1,"{""policy_claim"": false}",NO
+SCOPUS_ID:0027265339,SCOPUS_ID:0027265339,,,rerun3,81ef8d9ef044,deepseek-chat,0.1,"{""policy_claim"": false}",NO
+SCOPUS_ID:0027319802,SCOPUS_ID:0027319802,10.1016/s0749-3797(18)30729-3,Cost-effectiveness of two nurse-led programs to teach breast self- examination,rerun3,81ef8d9ef044,deepseek-chat,0.1,"{""policy_claim"": true}",YES
+SCOPUS_ID:0027501567,SCOPUS_ID:0027501567,,,rerun3,81ef8d9ef044,deepseek-chat,0.1,"{""policy_claim"": false}",NO
+SCOPUS_ID:0027531865,SCOPUS_ID:0027531865,,,rerun3,81ef8d9ef044,deepseek-chat,0.1,"{""policy_claim"": false}",NO
+SCOPUS_ID:0027787349,SCOPUS_ID:0027787349,10.1093/ije/22.6.1056,Gender differential in all-cause and cardiovascular disease mortality,rerun3,81ef8d9ef044,deepseek-chat,0.1,"{""policy_claim"": false}",NO
+SCOPUS_ID:0027940114,SCOPUS_ID:0027940114,10.1093/ije/23.4.673,No improvement in survival from melanoma diagnosed from 1973 to 1984,rerun3,81ef8d9ef044,deepseek-chat,0.1,"{""policy_claim"": false}",NO
+SCOPUS_ID:0028282150,SCOPUS_ID:0028282150,10.1136/jech.48.2.188,Prevalence of total hip replacement: How much demand has been met?,rerun3,81ef8d9ef044,deepseek-chat,0.1,"{""policy_claim"": false}",NO
+SCOPUS_ID:0028286476,SCOPUS_ID:0028286476,10.1136/jech.48.3.313,Estimating confidence limits on a standardised mortality ratio when the expected number is not error free,rerun3,81ef8d9ef044,deepseek-chat,0.1,"{""policy_claim"": false}",NO
+SCOPUS_ID:0028296207,SCOPUS_ID:0028296207,,,rerun3,81ef8d9ef044,deepseek-chat,0.1,"{""policy_claim"": false}",NO
+SCOPUS_ID:0028784286,SCOPUS_ID:0028784286,10.1093/oxfordjournals.aje.a117747,Preschool physical activity level and change in body fatness in young children: The framingham children's study,rerun3,81ef8d9ef044,deepseek-chat,0.1,"{""policy_claim"": false}",NO
+SCOPUS_ID:0029095987,SCOPUS_ID:0029095987,,,rerun3,81ef8d9ef044,deepseek-chat,0.1,"{""policy_claim"": false}",NO
+SCOPUS_ID:0029610463,SCOPUS_ID:0029610463,,,rerun3,81ef8d9ef044,deepseek-chat,0.1,"{""policy_claim"": false}",NO
+SCOPUS_ID:0029660655,SCOPUS_ID:0029660655,,,rerun3,81ef8d9ef044,deepseek-chat,0.1,"{""policy_claim"": false}",NO
+SCOPUS_ID:0029841886,SCOPUS_ID:0029841886,,,rerun3,81ef8d9ef044,deepseek-chat,0.1,"{""policy_claim"": false}",NO
+SCOPUS_ID:0029924623,SCOPUS_ID:0029924623,10.1097/00001648-199605000-00011,Silica and aluminum in drinking water and cognitive impairment in the elderly,rerun3,81ef8d9ef044,deepseek-chat,0.1,"{""policy_claim"": false}",NO
+SCOPUS_ID:0029933963,SCOPUS_ID:0029933963,10.1007/BF00144421,Unusual features in the epidemiology of Lyme borreliosis,rerun3,81ef8d9ef044,deepseek-chat,0.1,"{""policy_claim"": false}",NO
+SCOPUS_ID:0029949732,SCOPUS_ID:0029949732,10.1006/pmed.1996.0058,Exposure to environmental tobacco smoke - Perceptions of African American children and adolescents,rerun3,81ef8d9ef044,deepseek-chat,0.1,"{""policy_claim"": true}",YES
+SCOPUS_ID:0029968968,SCOPUS_ID:0029968968,10.2105/AJPH.86.11.1607,"Childhood victimization and subsequent risk for promiscuity, prostitution, and teenage pregnancy: A prospective study",rerun3,81ef8d9ef044,deepseek-chat,0.1,"{""policy_claim"": false}",NO
+SCOPUS_ID:0030009244,SCOPUS_ID:0030009244,10.1093/ije/25.2.394,Characteristics of non-insulin-dependent diabetes mellitus in elderly men: Effect modification by family history,rerun3,81ef8d9ef044,deepseek-chat,0.1,"{""policy_claim"": false}",NO
+SCOPUS_ID:0030197928,SCOPUS_ID:0030197928,,,rerun3,81ef8d9ef044,deepseek-chat,0.1,"{""policy_claim"": false}",NO
+SCOPUS_ID:0030850107,SCOPUS_ID:0030850107,10.2105/AJPH.87.6.1022,Prenatal health behaviors and psychosocial risk factors in pregnant women of mexican origin: The role of acculturation,rerun3,81ef8d9ef044,deepseek-chat,0.1,"{""policy_claim"": false}",NO
+SCOPUS_ID:0030972541,SCOPUS_ID:0030972541,10.1093/oxfordjournals.aje.a009170,Families and natural history of lipids in childhood: An 18-year follow- up study,rerun3,81ef8d9ef044,deepseek-chat,0.1,"{""policy_claim"": false}",NO
+SCOPUS_ID:0030982191,SCOPUS_ID:0030982191,,,rerun3,81ef8d9ef044,deepseek-chat,0.1,"{""policy_claim"": false}",NO
+SCOPUS_ID:0030991841,SCOPUS_ID:0030991841,10.1093/eurpub/7.2.153,Cost-effectiveness of vaccination against pneumococcal pneumonia in The Netherlands,rerun3,81ef8d9ef044,deepseek-chat,0.1,"{""policy_claim"": false}",NO
+SCOPUS_ID:0030997166,SCOPUS_ID:0030997166,,,rerun3,81ef8d9ef044,deepseek-chat,0.1,"{""policy_claim"": false}",NO
+SCOPUS_ID:0031028150,SCOPUS_ID:0031028150,10.1016/s0749-3797(18)30226-5,Representations of menopause and their health care implications: A qualitative study,rerun3,81ef8d9ef044,deepseek-chat,0.1,"{""policy_claim"": true}",YES
+SCOPUS_ID:0031661866,SCOPUS_ID:0031661866,10.2105/AJPH.88.10.1503,Misclassification rates for current smokers misclassified as nonsmokers,rerun3,81ef8d9ef044,deepseek-chat,0.1,"{""policy_claim"": false}",NO
+SCOPUS_ID:0031689886,SCOPUS_ID:0031689886,10.1016/S0749-3797(98)00049-X,Costs of maternal conditions attributable to smoking during pregnancy,rerun3,81ef8d9ef044,deepseek-chat,0.1,"{""policy_claim"": true}",YES
+SCOPUS_ID:0031925067,SCOPUS_ID:0031925067,10.1093/ije/27.2.222,Morbidity differences by occupational class among men in seven European countries: An application of the Erikson-Goldthorpe social class scheme,rerun3,81ef8d9ef044,deepseek-chat,0.1,"{""policy_claim"": false}",NO
+SCOPUS_ID:0032440796,SCOPUS_ID:0032440796,10.2105/ajph.88.12.1846,Potential barriers to the removal of norplant among family planning clinic patients,rerun3,81ef8d9ef044,deepseek-chat,0.1,"{""policy_claim"": true}",YES
+SCOPUS_ID:0032532135,SCOPUS_ID:0032532135,10.1093/oxfordjournals.aje.a009695,Ethnic disparities in patient recall of physician recommendations of diagnostic and treatment procedures for coronary disease,rerun3,81ef8d9ef044,deepseek-chat,0.1,"{""policy_claim"": true}",YES
+SCOPUS_ID:0032838463,SCOPUS_ID:0032838463,10.1016/S0749-3797(99)00060-4,Is cigarette smoking associated with impaired physical and mental functional status? An office-based survey of primary care patients,rerun3,81ef8d9ef044,deepseek-chat,0.1,"{""policy_claim"": false}",NO
+SCOPUS_ID:0032914081,SCOPUS_ID:0032914081,10.1136/jech.53.6.348,Association between job characteristics and plasma fibrinogen in a normal working population: A cross sectional analysis in referents of the SHEEP study,rerun3,81ef8d9ef044,deepseek-chat,0.1,"{""policy_claim"": false}",NO
+SCOPUS_ID:0033485949,SCOPUS_ID:0033485949,,,rerun3,81ef8d9ef044,deepseek-chat,0.1,"{""policy_claim"": false}",NO
+SCOPUS_ID:0033568791,SCOPUS_ID:0033568791,10.1093/oxfordjournals.aje.a010053,Breast cancer and oral contraceptive use in Asian-American women,rerun3,81ef8d9ef044,deepseek-chat,0.1,"{""policy_claim"": false}",NO
+SCOPUS_ID:0033728677,SCOPUS_ID:0033728677,,,rerun3,81ef8d9ef044,deepseek-chat,0.1,"{""policy_claim"": false}",NO
+SCOPUS_ID:0033795188,SCOPUS_ID:0033795188,10.2105/AJPH.90.10.1526,Childhood mortality impact and costs of integrating vitamin A supplementation into immunization campaigns,rerun3,81ef8d9ef044,deepseek-chat,0.1,"{""policy_claim"": false}",NO
+SCOPUS_ID:0034078420,SCOPUS_ID:0034078420,,,rerun3,81ef8d9ef044,deepseek-chat,0.1,"{""policy_claim"": false}",NO
+SCOPUS_ID:0034663793,SCOPUS_ID:0034663793,,,rerun3,81ef8d9ef044,deepseek-chat,0.1,"{""policy_claim"": false}",NO
+SCOPUS_ID:0035011929,SCOPUS_ID:0035011929,,,rerun3,81ef8d9ef044,deepseek-chat,0.1,"{""policy_claim"": false}",NO
+SCOPUS_ID:0035099909,SCOPUS_ID:0035099909,,,rerun3,81ef8d9ef044,deepseek-chat,0.1,"{""policy_claim"": false}",NO
+SCOPUS_ID:0035183333,SCOPUS_ID:0035183333,,,rerun3,81ef8d9ef044,deepseek-chat,0.1,"{""policy_claim"": false}",NO
+SCOPUS_ID:0035709540,SCOPUS_ID:0035709540,10.1093/ije/30.6.1233,On the importance-and the unimportance-of birthweight,rerun3,81ef8d9ef044,deepseek-chat,0.1,"{""policy_claim"": false}",NO
+SCOPUS_ID:0036301558,SCOPUS_ID:0036301558,10.1093/ije/31.3.587,An ecologic study of protective equipment and injury in two contact sports,rerun3,81ef8d9ef044,deepseek-chat,0.1,"{""policy_claim"": false}",NO
+SCOPUS_ID:0036351360,SCOPUS_ID:0036351360,,,rerun3,81ef8d9ef044,deepseek-chat,0.1,"{""policy_claim"": false}",NO
+SCOPUS_ID:0036392038,SCOPUS_ID:0036392038,10.1006/pmed.2002.1064,Clustering of lifestyle risk factors in a general adult population,rerun3,81ef8d9ef044,deepseek-chat,0.1,"{""policy_claim"": true}",YES
+SCOPUS_ID:0036721712,SCOPUS_ID:0036721712,10.2105/AJPH.92.9.1523,The social-environmental context of violent behavior in persons treated for severe mental illness,rerun3,81ef8d9ef044,deepseek-chat,0.1,"{""policy_claim"": true}",YES
+SCOPUS_ID:0037209068,SCOPUS_ID:0037209068,10.1097/00001648-200301000-00009,The effect of concurvity in generalized additive models linking mortality to ambient particulate matter,rerun3,81ef8d9ef044,deepseek-chat,0.1,"{""policy_claim"": false}",NO
+SCOPUS_ID:0037383803,SCOPUS_ID:0037383803,,,rerun3,81ef8d9ef044,deepseek-chat,0.1,"{""policy_claim"": false}",NO
+SCOPUS_ID:0037564783,SCOPUS_ID:0037564783,10.2105/AJPH.93.6.963,The Efficacy of a Relationship-Based HIV/STD Prevention Program for Heterosexual Couples,rerun3,81ef8d9ef044,deepseek-chat,0.1,"{""policy_claim"": false}",NO
+SCOPUS_ID:0037564790,SCOPUS_ID:0037564790,,,rerun3,81ef8d9ef044,deepseek-chat,0.1,"{""policy_claim"": false}",NO
+SCOPUS_ID:0037836100,SCOPUS_ID:0037836100,,,rerun3,81ef8d9ef044,deepseek-chat,0.1,"{""policy_claim"": false}",NO
+SCOPUS_ID:0041509097,SCOPUS_ID:0041509097,10.1093/aje/kwg150,Searching for disease-susceptibility loci by testing for Hardy-Weinberg disequilibrium in a gene bank of affected individuals,rerun3,81ef8d9ef044,deepseek-chat,0.1,"{""policy_claim"": false}",NO
+SCOPUS_ID:0041803240,SCOPUS_ID:0041803240,10.1023/A:1024686625528,Birth weight and risk of angina pectoris: Analysis in Swedish twins,rerun3,81ef8d9ef044,deepseek-chat,0.1,"{""policy_claim"": false}",NO
+SCOPUS_ID:0141997855,SCOPUS_ID:0141997855,10.1093/aje/kwg218,"Differences in body shape representations among young adults from a biracial (Black-White), semirural community: The Bogalusa Heart Study",rerun3,81ef8d9ef044,deepseek-chat,0.1,"{""policy_claim"": true}",YES
+SCOPUS_ID:0344117621,SCOPUS_ID:0344117621,10.1093/eurpub/9.3.181,Physician recommendations for coronary revascularization: Variations by clinical speciality,rerun3,81ef8d9ef044,deepseek-chat,0.1,"{""policy_claim"": true}",YES
+SCOPUS_ID:0344673387,SCOPUS_ID:0344673387,,,rerun3,81ef8d9ef044,deepseek-chat,0.1,"{""policy_claim"": false}",NO
+SCOPUS_ID:0346093850,SCOPUS_ID:0346093850,,,rerun3,81ef8d9ef044,deepseek-chat,0.1,"{""policy_claim"": false}",NO
+SCOPUS_ID:0346725916,SCOPUS_ID:0346725916,,,rerun3,81ef8d9ef044,deepseek-chat,0.1,"{""policy_claim"": false}",NO
+SCOPUS_ID:0842281637,SCOPUS_ID:0842281637,10.1016/j.ypmed.2003.11.003,"Nicotine dependence, quit attempts, and quitting among smokers in a regional population sample from a country with a high prevalence of tobacco smoking",rerun3,81ef8d9ef044,deepseek-chat,0.1,"{""policy_claim"": true}",YES
+SCOPUS_ID:0842348903,SCOPUS_ID:0842348903,,,rerun3,81ef8d9ef044,deepseek-chat,0.1,"{""policy_claim"": false}",NO
+SCOPUS_ID:10744220752,SCOPUS_ID:10744220752,10.1016/j.ypmed.2003.08.009,Changes in the nutrient content of school lunches: Results from the Pathways study,rerun3,81ef8d9ef044,deepseek-chat,0.1,"{""policy_claim"": false}",NO
+SCOPUS_ID:1842477760,SCOPUS_ID:1842477760,,,rerun3,81ef8d9ef044,deepseek-chat,0.1,"{""policy_claim"": false}",NO
+SCOPUS_ID:20244367283,SCOPUS_ID:20244367283,,,rerun3,81ef8d9ef044,deepseek-chat,0.1,"{""policy_claim"": false}",NO
+SCOPUS_ID:2342439144,SCOPUS_ID:2342439144,,,rerun3,81ef8d9ef044,deepseek-chat,0.1,"{""policy_claim"": false}",NO
+SCOPUS_ID:23944459858,SCOPUS_ID:23944459858,,,rerun3,81ef8d9ef044,deepseek-chat,0.1,"{""policy_claim"": false}",NO
+SCOPUS_ID:24144497054,SCOPUS_ID:24144497054,,,rerun3,81ef8d9ef044,deepseek-chat,0.1,"{""policy_claim"": false}",NO
+SCOPUS_ID:2442700090,SCOPUS_ID:2442700090,,,rerun3,81ef8d9ef044,deepseek-chat,0.1,"{""policy_claim"": false}",NO
+SCOPUS_ID:33744471162,SCOPUS_ID:33744471162,10.1136/jech.2005.039032,Do perceptions of neighbourhood environment influence health? Baseline findings from a British survey of aging,rerun3,81ef8d9ef044,deepseek-chat,0.1,"{""policy_claim"": true}",YES
+SCOPUS_ID:33748035052,SCOPUS_ID:33748035052,,,rerun3,81ef8d9ef044,deepseek-chat,0.1,"{""policy_claim"": false}",NO
+SCOPUS_ID:33947211169,SCOPUS_ID:33947211169,10.1093/aje/kwk063,"Smoking, hypertension, alcohol consumption, and risk of abdominal aortic aneurysm in men",rerun3,81ef8d9ef044,deepseek-chat,0.1,"{""policy_claim"": false}",NO
+SCOPUS_ID:34247126863,SCOPUS_ID:34247126863,,,rerun3,81ef8d9ef044,deepseek-chat,0.1,"{""policy_claim"": false}",NO
+SCOPUS_ID:34247537778,SCOPUS_ID:34247537778,10.1093/ije/dyl267,Are socially disadvantaged neighbourhoods deprived of health-related community resources?,rerun3,81ef8d9ef044,deepseek-chat,0.1,"{""policy_claim"": false}",NO
+SCOPUS_ID:34447299113,SCOPUS_ID:34447299113,,,rerun3,81ef8d9ef044,deepseek-chat,0.1,"{""policy_claim"": false}",NO
+SCOPUS_ID:34848820832,SCOPUS_ID:34848820832,,,rerun3,81ef8d9ef044,deepseek-chat,0.1,"{""policy_claim"": false}",NO
+SCOPUS_ID:37249052337,SCOPUS_ID:37249052337,10.1093/eurpub/ckm036,"Alcohol drinking, consumption patterns and breast cancer among Danish nurses: A cohort study",rerun3,81ef8d9ef044,deepseek-chat,0.1,"{""policy_claim"": false}",NO
+SCOPUS_ID:43049167431,SCOPUS_ID:43049167431,,,rerun3,81ef8d9ef044,deepseek-chat,0.1,"{""policy_claim"": false}",NO
+SCOPUS_ID:47949104818,SCOPUS_ID:47949104818,,,rerun3,81ef8d9ef044,deepseek-chat,0.1,"{""policy_claim"": false}",NO
+SCOPUS_ID:61649104289,SCOPUS_ID:61649104289,,,rerun3,81ef8d9ef044,deepseek-chat,0.1,"{""policy_claim"": false}",NO
+SCOPUS_ID:61649117292,SCOPUS_ID:61649117292,,,rerun3,81ef8d9ef044,deepseek-chat,0.1,"{""policy_claim"": false}",NO
+SCOPUS_ID:63149172821,SCOPUS_ID:63149172821,10.2105/AJPH.2008.146571,Psychosocial care for women survivors of the tsunami disaster in India,rerun3,81ef8d9ef044,deepseek-chat,0.1,"{""policy_claim"": true}",YES
+SCOPUS_ID:70749122175,SCOPUS_ID:70749122175,10.1016/j.ypmed.2009.09.017,Oral language comprehension assessment among elderly: A population based study in Brazil,rerun3,81ef8d9ef044,deepseek-chat,0.1,"{""policy_claim"": false}",NO
+SCOPUS_ID:71549123257,SCOPUS_ID:71549123257,,,rerun3,81ef8d9ef044,deepseek-chat,0.1,"{""policy_claim"": false}",NO
+SCOPUS_ID:7244239176,SCOPUS_ID:7244239176,10.1136/jech.2003.015370,History of addictions.,rerun3,81ef8d9ef044,deepseek-chat,0.1,"{""policy_claim"": false}",NO
+SCOPUS_ID:76249114072,SCOPUS_ID:76249114072,,,rerun3,81ef8d9ef044,deepseek-chat,0.1,"{""policy_claim"": false}",NO
+SCOPUS_ID:76549115338,SCOPUS_ID:76549115338,10.1016/j.amepre.2009.10.040,"Neighborhood, Route, and School Environments and Children's Active Commuting",rerun3,81ef8d9ef044,deepseek-chat,0.1,"{""policy_claim"": true}",YES
+SCOPUS_ID:77951647598,SCOPUS_ID:77951647598,,,rerun3,81ef8d9ef044,deepseek-chat,0.1,"{""policy_claim"": false}",NO
+SCOPUS_ID:77952276406,SCOPUS_ID:77952276406,10.2105/AJPH.2009.160002,Herpes zoster and exposure to the varicella zoster virus in an era of varicella vaccination,rerun3,81ef8d9ef044,deepseek-chat,0.1,"{""policy_claim"": false}",NO
+SCOPUS_ID:77952942744,SCOPUS_ID:77952942744,10.1093/aje/kwq045,Body fatness at young ages and risk of breast cancer throughout life,rerun3,81ef8d9ef044,deepseek-chat,0.1,"{""policy_claim"": false}",NO
+SCOPUS_ID:77953561364,SCOPUS_ID:77953561364,,,rerun3,81ef8d9ef044,deepseek-chat,0.1,"{""policy_claim"": false}",NO
+SCOPUS_ID:78649711951,SCOPUS_ID:78649711951,,,rerun3,81ef8d9ef044,deepseek-chat,0.1,"{""policy_claim"": false}",NO
+SCOPUS_ID:78650525695,SCOPUS_ID:78650525695,,,rerun3,81ef8d9ef044,deepseek-chat,0.1,"{""policy_claim"": false}",NO
+SCOPUS_ID:78650633722,SCOPUS_ID:78650633722,10.1093/aje/kwq345,"Adult body size, hormone receptor status, and premenopausal breast cancer risk in a multiethnic population",rerun3,81ef8d9ef044,deepseek-chat,0.1,"{""policy_claim"": false}",NO
+SCOPUS_ID:78651299926,SCOPUS_ID:78651299926,10.1136/jech.2009.098269,Social disparities in periodontitis among US adults: The effect of allostatic load,rerun3,81ef8d9ef044,deepseek-chat,0.1,"{""policy_claim"": false}",NO
+SCOPUS_ID:78751685435,SCOPUS_ID:78751685435,10.1016/j.ypmed.2010.07.005,Screen time and risk behaviors in 10- to 16-year-old Canadian youth,rerun3,81ef8d9ef044,deepseek-chat,0.1,"{""policy_claim"": false}",NO
+SCOPUS_ID:7944221330,SCOPUS_ID:7944221330,10.1016/j.ypmed.2004.04.019,Television viewing and smoking volume in adolescent smokers: A cross-sectional study,rerun3,81ef8d9ef044,deepseek-chat,0.1,"{""policy_claim"": false}",NO
+SCOPUS_ID:79953168900,SCOPUS_ID:79953168900,10.1016/j.ypmed.2010.07.006,Evaluation of policies to promote physical activity in afterschool programs: Are we meeting current benchmarks?,rerun3,81ef8d9ef044,deepseek-chat,0.1,"{""policy_claim"": true}",YES
+SCOPUS_ID:79955779649,SCOPUS_ID:79955779649,10.1093/aje/kwq502,Dynamic path analysis in life-course epidemiology,rerun3,81ef8d9ef044,deepseek-chat,0.1,"{""policy_claim"": false}",NO
+SCOPUS_ID:80054075776,SCOPUS_ID:80054075776,,,rerun3,81ef8d9ef044,deepseek-chat,0.1,"{""policy_claim"": false}",NO
+SCOPUS_ID:80054735842,SCOPUS_ID:80054735842,,,rerun3,81ef8d9ef044,deepseek-chat,0.1,"{""policy_claim"": false}",NO
+SCOPUS_ID:84861397663,SCOPUS_ID:84861397663,,,rerun3,81ef8d9ef044,deepseek-chat,0.1,"{""policy_claim"": false}",NO
+SCOPUS_ID:84862587399,SCOPUS_ID:84862587399,10.2105/AJPH.2011.300408,Integrating biodiversity management and indigenous biopiracy protection to promote environmental justice and global health,rerun3,81ef8d9ef044,deepseek-chat,0.1,"{""policy_claim"": true}",YES
+SCOPUS_ID:84871232651,SCOPUS_ID:84871232651,10.1093/aje/kws212,Perinatal and family risk factors for Hodgkin lymphoma in childhood through young adulthood,rerun3,81ef8d9ef044,deepseek-chat,0.1,"{""policy_claim"": false}",NO
+SCOPUS_ID:84871996226,SCOPUS_ID:84871996226,10.1016/j.ypmed.2012.10.014,Acceptability of standing workstations in elementary schools: A pilot study,rerun3,81ef8d9ef044,deepseek-chat,0.1,"{""policy_claim"": false}",NO
+SCOPUS_ID:84880312110,SCOPUS_ID:84880312110,10.1016/j.amepre.2013.03.019,Challenges in cervical cancer prevention: A survey of U.S. Obstetrician-Gynecologists,rerun3,81ef8d9ef044,deepseek-chat,0.1,"{""policy_claim"": true}",YES
+SCOPUS_ID:84880323998,SCOPUS_ID:84880323998,,,rerun3,81ef8d9ef044,deepseek-chat,0.1,"{""policy_claim"": false}",NO
+SCOPUS_ID:84880546484,SCOPUS_ID:84880546484,,,rerun3,81ef8d9ef044,deepseek-chat,0.1,"{""policy_claim"": false}",NO
+SCOPUS_ID:84881604715,SCOPUS_ID:84881604715,,,rerun3,81ef8d9ef044,deepseek-chat,0.1,"{""policy_claim"": false}",NO
+SCOPUS_ID:84884141140,SCOPUS_ID:84884141140,,,rerun3,81ef8d9ef044,deepseek-chat,0.1,"{""policy_claim"": false}",NO
+SCOPUS_ID:84884999048,SCOPUS_ID:84884999048,,,rerun3,81ef8d9ef044,deepseek-chat,0.1,"{""policy_claim"": false}",NO
+SCOPUS_ID:84888229876,SCOPUS_ID:84888229876,,,rerun3,81ef8d9ef044,deepseek-chat,0.1,"{""policy_claim"": false}",NO
+SCOPUS_ID:84891683349,SCOPUS_ID:84891683349,,,rerun3,81ef8d9ef044,deepseek-chat,0.1,"{""policy_claim"": false}",NO
+SCOPUS_ID:84907201782,SCOPUS_ID:84907201782,10.2105/AJPH.2013.301735,Factors influencing adoption of and adherence to indoor smoking bans among health disparity communities,rerun3,81ef8d9ef044,deepseek-chat,0.1,"{""policy_claim"": false}",NO
+SCOPUS_ID:84907336726,SCOPUS_ID:84907336726,10.1016/j.ypmed.2014.08.015,"The association of major patterns of physical activity, sedentary behavior and sleep with health-related quality of life: A cohort study",rerun3,81ef8d9ef044,deepseek-chat,0.1,"{""policy_claim"": true}",YES
+SCOPUS_ID:84912129265,SCOPUS_ID:84912129265,10.1016/j.amepre.2014.08.009,"Adult vaccination disparities among foreign-born populations in the u.s., 2012",rerun3,81ef8d9ef044,deepseek-chat,0.1,"{""policy_claim"": false}",NO
+SCOPUS_ID:84922476922,SCOPUS_ID:84922476922,,,rerun3,81ef8d9ef044,deepseek-chat,0.1,"{""policy_claim"": false}",NO
+SCOPUS_ID:84929055179,SCOPUS_ID:84929055179,10.1093/eurpub/cku229,Comparing variation across European countries: Building geographical areas to provide sounder estimates,rerun3,81ef8d9ef044,deepseek-chat,0.1,"{""policy_claim"": false}",NO
+SCOPUS_ID:84929379981,SCOPUS_ID:84929379981,,,rerun3,81ef8d9ef044,deepseek-chat,0.1,"{""policy_claim"": false}",NO
+SCOPUS_ID:84939523052,SCOPUS_ID:84939523052,10.1093/eurpub/cku191,Cybervictimization and somatic and psychological symptoms among Italian middle school students,rerun3,81ef8d9ef044,deepseek-chat,0.1,"{""policy_claim"": true}",YES
+SCOPUS_ID:84946734426,SCOPUS_ID:84946734426,10.2105/AJPH.2015.302611,Health care disparities in the post-affordable care act era,rerun3,81ef8d9ef044,deepseek-chat,0.1,"{""policy_claim"": false}",NO
+SCOPUS_ID:84947868632,SCOPUS_ID:84947868632,,,rerun3,81ef8d9ef044,deepseek-chat,0.1,"{""policy_claim"": false}",NO
+SCOPUS_ID:84952637063,SCOPUS_ID:84952637063,,,rerun3,81ef8d9ef044,deepseek-chat,0.1,"{""policy_claim"": false}",NO
+SCOPUS_ID:84958759462,SCOPUS_ID:84958759462,,,rerun3,81ef8d9ef044,deepseek-chat,0.1,"{""policy_claim"": false}",NO
+SCOPUS_ID:84959044970,SCOPUS_ID:84959044970,,,rerun3,81ef8d9ef044,deepseek-chat,0.1,"{""policy_claim"": false}",NO
+SCOPUS_ID:84962766998,SCOPUS_ID:84962766998,,,rerun3,81ef8d9ef044,deepseek-chat,0.1,"{""policy_claim"": false}",NO
+SCOPUS_ID:84962843818,SCOPUS_ID:84962843818,,,rerun3,81ef8d9ef044,deepseek-chat,0.1,"{""policy_claim"": false}",NO
+SCOPUS_ID:84987962219,SCOPUS_ID:84987962219,10.2105/AJPH.2016.303362,Impact of the Berkeley excise tax on sugar-sweetened beverage consumption,rerun3,81ef8d9ef044,deepseek-chat,0.1,"{""policy_claim"": false}",NO
+SCOPUS_ID:85005916303,SCOPUS_ID:85005916303,10.1016/j.amepre.2016.09.016,Association of Bacterial Vaginosis With Chlamydia and Gonorrhea Among Women in the U.S. Army,rerun3,81ef8d9ef044,deepseek-chat,0.1,"{""policy_claim"": false}",NO
+SCOPUS_ID:85006078355,SCOPUS_ID:85006078355,10.2105/AJPH.2016.303450,"A public-private partnership to mitigate food insecurity and food waste in Orange County, California",rerun3,81ef8d9ef044,deepseek-chat,0.1,"{""policy_claim"": false}",NO
+SCOPUS_ID:85014802814,SCOPUS_ID:85014802814,10.1093/aje/kww129,Improving estimates of numbers of children with severe acute malnutrition using cohort and survey data,rerun3,81ef8d9ef044,deepseek-chat,0.1,"{""policy_claim"": false}",NO
+SCOPUS_ID:85024362284,SCOPUS_ID:85024362284,,,rerun3,81ef8d9ef044,deepseek-chat,0.1,"{""policy_claim"": false}",NO
+SCOPUS_ID:85037033393,SCOPUS_ID:85037033393,,,rerun3,81ef8d9ef044,deepseek-chat,0.1,"{""policy_claim"": false}",NO
+SCOPUS_ID:85037709028,SCOPUS_ID:85037709028,,,rerun3,81ef8d9ef044,deepseek-chat,0.1,"{""policy_claim"": false}",NO
+SCOPUS_ID:85038398484,SCOPUS_ID:85038398484,,,rerun3,81ef8d9ef044,deepseek-chat,0.1,"{""policy_claim"": false}",NO
+SCOPUS_ID:85041402164,SCOPUS_ID:85041402164,10.1016/j.ypmed.2018.01.017,Internet little cigar and cigarillo vendors: Surveillance of sales and marketing practices via website content analysis,rerun3,81ef8d9ef044,deepseek-chat,0.1,"{""policy_claim"": true}",YES
+SCOPUS_ID:85042868429,SCOPUS_ID:85042868429,10.1136/jech-2017-209333,Longitudinal analysis of cardiovascular disease risk profile in neighbourhood poverty subgroups: 5-year results from an afterschool fitness programme in the USA,rerun3,81ef8d9ef044,deepseek-chat,0.1,"{""policy_claim"": false}",NO
+SCOPUS_ID:85045670076,SCOPUS_ID:85045670076,,,rerun3,81ef8d9ef044,deepseek-chat,0.1,"{""policy_claim"": false}",NO
+SCOPUS_ID:85049344365,SCOPUS_ID:85049344365,10.1016/S2468-2667(18)30109-9,Effects of restrictions to Income Support on health of lone mothers in the UK: a natural experiment study,rerun3,81ef8d9ef044,deepseek-chat,0.1,"{""policy_claim"": false}",NO
+SCOPUS_ID:85051239049,SCOPUS_ID:85051239049,,,rerun3,81ef8d9ef044,deepseek-chat,0.1,"{""policy_claim"": false}",NO
+SCOPUS_ID:85052956484,SCOPUS_ID:85052956484,,,rerun3,81ef8d9ef044,deepseek-chat,0.1,"{""policy_claim"": false}",NO
+SCOPUS_ID:85053424873,SCOPUS_ID:85053424873,10.1016/S2468-2667(18)30097-5,"The effect of public health-oriented drug law reform on HIV incidence in people who inject drugs in Tijuana, Mexico: an epidemic modelling study",rerun3,81ef8d9ef044,deepseek-chat,0.1,"{""policy_claim"": true}",YES
+SCOPUS_ID:85054964065,SCOPUS_ID:85054964065,,,rerun3,81ef8d9ef044,deepseek-chat,0.1,"{""policy_claim"": false}",NO
+SCOPUS_ID:85055798363,SCOPUS_ID:85055798363,10.1093/aje/kwy158,The Number of Events per Confounder for Valid Estimation of Risk Difference Using Modified Least-Squares Regression,rerun3,81ef8d9ef044,deepseek-chat,0.1,"{""policy_claim"": false}",NO
+SCOPUS_ID:85066260594,SCOPUS_ID:85066260594,10.1016/S2468-2667(19)30018-0,"Geospatial, racial, and educational variation in firearm mortality in the USA, Mexico, Brazil, and Colombia, 1990â€“2015: a comparative analysis of vital statistics data",rerun3,81ef8d9ef044,deepseek-chat,0.1,"{""policy_claim"": true}",YES
+SCOPUS_ID:85074266956,SCOPUS_ID:85074266956,,,rerun3,81ef8d9ef044,deepseek-chat,0.1,"{""policy_claim"": false}",NO
+SCOPUS_ID:85083405785,SCOPUS_ID:85083405785,,,rerun3,81ef8d9ef044,deepseek-chat,0.1,"{""policy_claim"": false}",NO
+SCOPUS_ID:85085015109,SCOPUS_ID:85085015109,10.1016/j.amepre.2020.03.024,"Alcohol Use and Suicidality by Sexual Orientation Among U.S. Youth, 2009â€“2017",rerun3,81ef8d9ef044,deepseek-chat,0.1,"{""policy_claim"": false}",NO
+SCOPUS_ID:85088828588,SCOPUS_ID:85088828588,10.1007/s10654-020-00665-w,Body mass index in young adulthood and risk of subsequent dementia at different levels of intelligence and education in Danish men,rerun3,81ef8d9ef044,deepseek-chat,0.1,"{""policy_claim"": false}",NO
+SCOPUS_ID:85089294116,SCOPUS_ID:85089294116,,,rerun3,81ef8d9ef044,deepseek-chat,0.1,"{""policy_claim"": false}",NO
+SCOPUS_ID:85090870257,SCOPUS_ID:85090870257,,,rerun3,81ef8d9ef044,deepseek-chat,0.1,"{""policy_claim"": false}",NO
+SCOPUS_ID:85102828933,SCOPUS_ID:85102828933,10.1016/j.ypmed.2021.106507,Associations between indicators of energy intake and expenditure with excess weight and obesity among women in sedentary and less-sedentary jobs,rerun3,81ef8d9ef044,deepseek-chat,0.1,"{""policy_claim"": false}",NO
+SCOPUS_ID:85116602537,SCOPUS_ID:85116602537,,,rerun3,81ef8d9ef044,deepseek-chat,0.1,"{""policy_claim"": false}",NO
+SCOPUS_ID:85122909289,SCOPUS_ID:85122909289,10.2105/AJPH.2021.306565,Adherence to Social-Distancing and Personal Hygiene Behavior Guidelines and Risk of COVID-19 Diagnosis: Evidence From the Understanding America Study,rerun3,81ef8d9ef044,deepseek-chat,0.1,"{""policy_claim"": false}",NO
+SCOPUS_ID:85123459610,SCOPUS_ID:85123459610,10.1093/ije/dyab095,Maternal smoking and smokeless tobacco use during pregnancy and offspring development: Sibling analysis in an intergenerational Swedish cohort,rerun3,81ef8d9ef044,deepseek-chat,0.1,"{""policy_claim"": false}",NO
+SCOPUS_ID:85123904653,SCOPUS_ID:85123904653,,,rerun3,81ef8d9ef044,deepseek-chat,0.1,"{""policy_claim"": false}",NO
+SCOPUS_ID:85124166197,SCOPUS_ID:85124166197,,,rerun3,81ef8d9ef044,deepseek-chat,0.1,"{""policy_claim"": false}",NO
+SCOPUS_ID:85131903072,SCOPUS_ID:85131903072,10.1093/ije/dyab204,Pre-eclampsia and risk of early-childhood asthma: A register study with sibling comparison and an exploration of intermediate variables,rerun3,81ef8d9ef044,deepseek-chat,0.1,"{""policy_claim"": false}",NO
+SCOPUS_ID:85133980653,SCOPUS_ID:85133980653,10.1093/aje/kwac025,Sampling Validation Data to Achieve a Planned Precision of the Bias-Adjusted Estimate of Effect,rerun3,81ef8d9ef044,deepseek-chat,0.1,"{""policy_claim"": false}",NO
+SCOPUS_ID:85136189922,SCOPUS_ID:85136189922,,,rerun3,81ef8d9ef044,deepseek-chat,0.1,"{""policy_claim"": false}",NO
+SCOPUS_ID:85146336085,SCOPUS_ID:85146336085,10.1016/j.amepre.2022.12.010,Air Quality Index and Childhood Asthma: A Pilot Randomized Clinical Trial Intervention,rerun3,81ef8d9ef044,deepseek-chat,0.1,"{""policy_claim"": false}",NO
+SCOPUS_ID:85147099255,SCOPUS_ID:85147099255,,,rerun3,81ef8d9ef044,deepseek-chat,0.1,"{""policy_claim"": false}",NO
+SCOPUS_ID:85149642428,SCOPUS_ID:85149642428,10.2105/AJPH.2022.307207,"Housing Instability and Evictions Linked to Elevated Intimate Partner and Workplace Violence Among Women Sex Workers in Vancouver, Canada: Findings of a Prospective, Community-Based Cohort, 2010-2019",rerun3,81ef8d9ef044,deepseek-chat,0.1,"{""policy_claim"": true}",YES
+SCOPUS_ID:85153606514,SCOPUS_ID:85153606514,,,rerun3,81ef8d9ef044,deepseek-chat,0.1,"{""policy_claim"": false}",NO
+SCOPUS_ID:85153610705,SCOPUS_ID:85153610705,10.1016/j.amepre.2023.03.006,Effectiveness of the National Diabetes Prevention Program After Gestational Diabetes,rerun3,81ef8d9ef044,deepseek-chat,0.1,"{""policy_claim"": false}",NO
+SCOPUS_ID:85163105729,SCOPUS_ID:85163105729,10.1016/j.ypmed.2023.107569,"The need for a personalized, core digital resource to facilitate health self-management",rerun3,81ef8d9ef044,deepseek-chat,0.1,"{""policy_claim"": false}",NO
+SCOPUS_ID:85166390788,SCOPUS_ID:85166390788,,,rerun3,81ef8d9ef044,deepseek-chat,0.1,"{""policy_claim"": false}",NO
+SCOPUS_ID:85195147269,SCOPUS_ID:85195147269,10.1007/s10654-024-01134-4,Trends in incidence and mortality of early-onset cancer in Germany between 1999 and 2019,rerun3,81ef8d9ef044,deepseek-chat,0.1,"{""policy_claim"": true}",YES
+SCOPUS_ID:85195227201,SCOPUS_ID:85195227201,,,rerun3,81ef8d9ef044,deepseek-chat,0.1,"{""policy_claim"": false}",NO
+SCOPUS_ID:85196674298,SCOPUS_ID:85196674298,,,rerun3,81ef8d9ef044,deepseek-chat,0.1,"{""policy_claim"": false}",NO
+SCOPUS_ID:85203007053,SCOPUS_ID:85203007053,10.1016/j.ypmed.2024.108125,Relationship between participation in projects of incentives to promote walking and healthy aging among the older population: A four-year longitudinal study,rerun3,81ef8d9ef044,deepseek-chat,0.1,"{""policy_claim"": true}",YES
