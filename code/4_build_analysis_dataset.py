@@ -64,7 +64,16 @@ def load_raw_records(in_dir: Path) -> pd.DataFrame:
     mod = load_filter_module()
     files = sorted(in_dir.glob("*.json"))
     if not files:
-        raise FileNotFoundError(f"No JSON files found under {in_dir}")
+        # Fall back to the combined filtered file if no raw journal files exist.
+        # This happens when scripts 1 and 2 were run elsewhere and only the
+        # combined output was transferred.
+        fallback = in_dir / "filtered" / "all_abstracts.json"
+        if fallback.exists():
+            print(f"No raw JSON files in {in_dir}; loading combined file: {fallback}")
+            return pd.DataFrame.from_records(mod.load_json(fallback))
+        raise FileNotFoundError(
+            f"No JSON files found under {in_dir} and no fallback at {fallback}"
+        )
 
     records = []
     for path in files:

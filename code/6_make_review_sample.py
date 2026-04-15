@@ -2,21 +2,23 @@
 """
 Generates samples for manual human validation of the LLM classification.
 
-Subcommands:
-  cross-sectional         Draw 100 cross-sectional papers for manual review.
-                          Exports a CSV with blank columns for a reviewer to fill in
-                          (manual_is_cross_sectional, manual_unclear, manual_exclude, manual_notes).
-                          Output: table/manual_review_cross_sectional_100.csv
+A subcommand is required. Usage:
 
-  cross-sectional-summary Summarise a completed review CSV: counts confirmed,
-                          unclear, and excluded records, and reports the claim rate
-                          among confirmed cross-sectional papers.
+  python 6_make_review_sample.py cross-sectional
+      Draw 100 cross-sectional papers for manual review.
+      Exports a CSV with blank columns for a reviewer to fill in
+      (manual_is_cross_sectional, manual_unclear, manual_exclude, manual_notes).
+      Output: table/manual_review_cross_sectional_100.csv
 
-  stratified              Draw a stratified-by-year sample of 400 papers across
-                          1990-2024. Produces a blinded Excel file (no LLM labels,
-                          for the human reviewer) and an internal file (with LLM
-                          labels, for comparison). Also runs a Spearman trend check
-                          to confirm the sample mirrors the full dataset.
+  python 6_make_review_sample.py cross-sectional-summary --review-csv <path>
+      Summarise a completed review CSV: counts confirmed, unclear, and excluded
+      records, and reports the claim rate among confirmed cross-sectional papers.
+
+  python 6_make_review_sample.py stratified
+      Draw a stratified-by-year sample of 400 papers across 1990-2024.
+      Produces a blinded Excel file (no LLM labels, for the human reviewer)
+      and an internal file (with LLM labels, for comparison). Also runs a
+      Spearman trend check to confirm the sample mirrors the full dataset.
 
 Run after: 4_build_analysis_dataset.py and 5_add_study_design_and_topics.py
 Run before: 7_concordance.py (which computes inter-rater agreement on the reviewed samples)
