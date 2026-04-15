@@ -1,8 +1,27 @@
 #!/usr/bin/env python3
+"""
+Builds the core analysis dataset by combining raw Scopus JSON records with
+LLM classification labels.
+
+Steps:
+  1. Loads all raw JSON files from data/json_files/ using the filter logic
+     in 2_filter_records.py (removes non-empirical content, duplicates, etc.).
+  2. Restricts to the 1990-2024 publication year window.
+  3. Merges in LLM policy-claim labels from all_abstracts_LLM.csv,
+     matching first on scopus_id then on DOI for any unmatched rows.
+  4. Cleans and standardises all columns (DOI normalisation, country codes, etc.).
+  5. Writes two outputs:
+       data/analysis/analysis_dataset.csv  — full analytic dataset
+       data/analysis/policy_claims_minimal.csv — public-safe minimal export
+         (DOI, title, journal, year, keywords, country, LLM label; no abstracts)
+
+Run after: 3_run_llm_classification.py
+Run before: 5_add_study_design_and_topics.py
+"""
 from __future__ import annotations
 
 import argparse
-from importlib.machinery import SourceFileLoader
+import importlib.util
 from pathlib import Path
 
 import pandas as pd
@@ -35,7 +54,10 @@ EXPECTED_COLUMNS = [
 def load_filter_module():
     if not FILTER_SCRIPT.exists():
         raise FileNotFoundError(f"Filter script not found: {FILTER_SCRIPT}")
-    return SourceFileLoader("filter_records", str(FILTER_SCRIPT)).load_module()
+    spec = importlib.util.spec_from_file_location("filter_records", FILTER_SCRIPT)
+    mod = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(mod)
+    return mod
 
 
 def load_raw_records(in_dir: Path) -> pd.DataFrame:

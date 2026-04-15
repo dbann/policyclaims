@@ -1,10 +1,16 @@
 #!/usr/bin/env python3
+"""
+Fetches article metadata and abstracts from the Scopus API for a fixed list of journals
+over the years 1990-2024 and saves one JSON file per journal to data/json_files/.
 
-#this script fetches abstracts from scopus for a list of journals and saves them in json files
-#it uses the Scopus API to fetch the data
-#it saves the data in json files in the json_files folder
+Queries are issued year-by-year (to stay under Scopus's 5,000-result cursor limit)
+and results are deduplicated by scopus_id. Re-running the script is safe: existing
+years are skipped unless --refresh is passed.
 
-#import necessary libraries
+Requires SCOPUS_API_KEY in .env. INST_TOKEN is optional (for institutional access).
+
+Run before: 2_filter_records.py
+"""
 import argparse
 import json
 import os

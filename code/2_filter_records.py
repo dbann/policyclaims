@@ -1,18 +1,21 @@
 #!/usr/bin/env python3
 """
-Standalone filter for abstract records.
+Filters raw Scopus JSON records to retain only original empirical research articles.
+
+Drops records that are: missing abstracts; commentaries, replies, letters, editorials,
+or corrections (detected via document type field and title/abstract regex); or review
+articles of any kind (systematic, scoping, umbrella, narrative, rapid, meta-analysis).
+
+Can be run standalone on individual files or a whole directory. When run on a directory
+it also writes a combined all_abstracts.json to data/json_files/filtered/.
+The load_json() and filter_df() functions are also called directly by 4_build_analysis_dataset.py.
 
 Usage:
-  # Filter a single JSON file
-  python filter_records.py --in json_files/all_abstracts.json --out json_files/all_abstracts.filtered.json --log json_files/excluded_records.csv
+  python 2_filter_records.py --dir data/json_files --log data/json_files/excluded_records.csv
+  python 2_filter_records.py --in data/json_files/my_journal.json --out filtered.json
 
-  # Or filter every *.json in a directory (writes *.filtered.json alongside originals)
-  python3 '2_filter_records.py' --dir json_files --log json_files/excluded_records.csv
-
-Rules:
-- Drop records with empty abstracts
-- Drop commentaries/replies/letters/editorials/corrections (via doc type + regex on title/abstract)
-- Drop review articles (including systematic, scoping, umbrella, narrative, rapid reviews, meta-analyses, etc.) via doc type and title regex
+Run after: 1_fetch_abstracts.py
+Run before: 3_run_llm_classification.py
 """
 
 from __future__ import annotations

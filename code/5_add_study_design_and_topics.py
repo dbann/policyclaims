@@ -1,4 +1,26 @@
 #!/usr/bin/env python3
+"""
+Enriches the analysis dataset with study design and topic classifications.
+
+Two complementary methods are used to assign study design:
+  - Strict (title/abstract): regex patterns matched against title and abstract
+    text (e.g. "a cross-sectional study", "a randomised controlled trial").
+  - Keywords: patterns matched against author-supplied keyword fields.
+  A combined column prioritises the strict method and falls back to keywords.
+
+Design categories: Experimental, Quasi-experimental, Cohort, Case-control,
+Cross-sectional, Qualitative, Ecological/Time-series, Other/None.
+
+Also adds binary topic/sensitivity flag columns (e.g. alcohol, tobacco,
+diet, physical activity) derived from keyword matching, for use in
+sub-group analyses.
+
+Input:  data/analysis/analysis_dataset.csv
+Output: data/analysis/analysis_dataset_enriched.csv
+
+Run after: 4_build_analysis_dataset.py
+Run before: 6_make_review_sample.py
+"""
 from __future__ import annotations
 
 import argparse

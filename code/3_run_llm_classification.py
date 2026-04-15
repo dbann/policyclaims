@@ -1,9 +1,19 @@
 #!/usr/bin/env python3
 """
-Processes merged abstracts using the Deepseek LLM API to classify
-policy claims based on a specific prompt. Accepts a user-selected JSON file
-and outputs JSON and CSV files. Supports full processing or reproducible
-random subsampling.
+Classifies each abstract as containing a policy claim (True/False) using the
+DeepSeek API. Processes abstracts concurrently and saves progress every 100 rows
+so a run can be safely resumed if interrupted.
+
+Input:  a filtered JSON file (e.g. data/json_files/filtered/all_abstracts.json)
+Output: a JSON and CSV alongside the input file, suffixed _LLM
+        (e.g. all_abstracts_LLM.json / all_abstracts_LLM.csv)
+
+Use --sample X to run on a random X% subsample for testing.
+
+Requires DEEPSEEK_API_KEY in .env.
+
+Run after: 2_filter_records.py
+Run before: 4_build_analysis_dataset.py
 """
 
 import os
