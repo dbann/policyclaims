@@ -5,15 +5,19 @@ Enriches the analysis dataset with study design and topic classifications.
 Two complementary methods are used to assign study design:
   - Strict (title/abstract): regex patterns matched against title and abstract
     text (e.g. "a cross-sectional study", "a randomised controlled trial").
+    In addition to the combined title+abstract match, separate columns are
+    produced for matches found in the title alone and the abstract alone.
   - Keywords: patterns matched against author-supplied keyword fields.
   A combined column prioritises the strict method and falls back to keywords.
 
+An additional `design_combined_unambiguous` column is produced for sensitivity
+analysis: it matches `design_combined` except that rows where the strict
+classifier matched 2+ designs (~1-2% of rows) are blanked to "Other/None".
+This lets you verify that downstream findings are not an artefact of the
+design-hierarchy tiebreaker.
+
 Design categories: Experimental, Quasi-experimental, Cohort, Case-control,
 Cross-sectional, Qualitative, Ecological/Time-series, Other/None.
-
-Also adds binary topic/sensitivity flag columns (e.g. alcohol, tobacco,
-diet, physical activity) derived from keyword matching, for use in
-sub-group analyses.
 
 Input:  data/analysis/analysis_dataset.csv
 Output: data/analysis/analysis_dataset_enriched.csv
@@ -33,118 +37,152 @@ import pandas as pd
 
 ROOT = Path(__file__).resolve().parents[1]
 INPUT_CSV = ROOT / "data" / "analysis" / "analysis_dataset.csv"
-OUTPUT_CSV = ROOT / "data" / "analysis" / "analysis_dataset_enriched.csv"
+OUTPUT_CSV = ROOT / "data" / "analysis" / "analysis_dataset_enriched_v2.csv"
+
+
+def normalize_text(text: str) -> str:
+    """Normalise text for matching: lowercase, unify hyphens/dashes, collapse whitespace.
+
+    Applied to BOTH patterns and search text so matches are consistent. This lets us
+    write patterns without hyphens (e.g. "cross sectional study") and match against
+    "cross-sectional", "cross–sectional" (en-dash), and "cross sectional" alike.
+    """
+    text = text.lower()
+    # Unify hyphens, en-dashes, em-dashes to spaces
+    text = re.sub(r"[-–—]", " ", text)
+    # Collapse whitespace
+    text = re.sub(r"\s+", " ", text)
+    return text.strip()
 
 
 def normalize_patterns(patterns):
-    out = []
-    for p in patterns:
-        p = p.replace("randomised", "randomi").replace("randomized", "randomi")
-        p = p.replace("time-series", "time series").replace("meta-analysis", "meta analysis")
-        out.append(p.lower())
-    return out
+    """Apply the same normalisation to patterns that we apply to search text."""
+    return [normalize_text(p) for p in patterns]
 
 
-STRICT_DESIGN_PATTERNS = {
+TITLE_ABSTRACT_PATTERNS = {
     "Experimental": [
-        "a randomi... controlled trial",
-        "a randomi... trial",
-        "randomi... clinical trial",
-        "double-blind",
-        "placebo-controlled trial",
+        "randomised controlled trial",
+        "randomized controlled trial",
+        "randomised trial",
+        "randomized trial",
+        "controlled trial",
+        "clinical trial",
+        "placebo controlled",
+        "cluster randomised",
+        "cluster randomized",
+        "stepped wedge",
     ],
     "Quasi-experimental": [
-        "a quasi-experimental",
-        "quasi-experimental study",
+        "quasi experimental",
         "natural experiment",
-        "difference-in-differences",
+        "difference in difference",
         "interrupted time series",
-        "regression discontin...",
+        "regression discontinuity",
+        "regression discon",
+        "synthetic control",
+        "diff in diff",
     ],
     "Cohort": [
-        "a cohort study",
-        "a prospective cohort",
-        "a retrospective cohort",
-        "a longitudinal study",
-        "a longitudinal analysis",
+        "cohort study",
+        "cohort analysis",
+        "prospective cohort",
+        "retrospective cohort",
+        "birth cohort",
+        "longitudinal study",
+        "longitudinal analysis",
+        "longitudinal cohort",
+        "follow up study",
     ],
     "Case-control": [
-        "a case-control study",
-        "case-control study",
-        "matched case-control",
+        "case control study",
+        "case control analysis",
+        "matched case control",
+        "nested case control",
     ],
     "Cross-sectional": [
-        "a cross-sectional study",
-        "cross-sectional study",
-        "cross-sectional survey",
+        "cross sectional study",
+        "cross sectional survey",
+        "cross sectional analysis",
+        "cross sectional design",
     ],
     "Qualitative": [
-        "a qualitative study",
+        "qualitative study",
         "qualitative analysis",
         "qualitative approach",
+        "qualitative research",
     ],
     "Ecological / Time-series": [
-        "an ecological study",
+        "ecological study",
         "ecological design",
-        "time series analysis",
+        "ecological analysis",
+        "time series",
     ],
 }
-STRICT_DESIGN_PATTERNS = {
-    k: normalize_patterns(v) for k, v in STRICT_DESIGN_PATTERNS.items()
+TITLE_ABSTRACT_PATTERNS = {
+    k: normalize_patterns(v) for k, v in TITLE_ABSTRACT_PATTERNS.items()
 }
 
 KEYWORD_DESIGN_PATTERNS = {
     "Experimental": [
-        "randomi... controlled trial",
-        "randomi... trial",
+        "randomised controlled trial",
+        "randomized controlled trial",
+        "randomised trial",
+        "randomized trial",
         "clinical trial",
         "rct",
         "pragmatic trial",
-        "cluster randomi",
+        "cluster randomised",
+        "cluster randomized",
         "stepped wedge",
     ],
     "Quasi-experimental": [
-        "quasi-experimental",
+        "quasi experimental",
         "natural experiment",
         "difference in difference",
-        "did design",
+        "diff in diff",
         "event study",
         "regression discontinuity",
         "interrupted time series",
-        "its",
         "synthetic control",
     ],
     "Cohort": [
         "cohort study",
         "cohort studies",
+        "cohort analysis",
         "prospective cohort",
         "retrospective cohort",
+        "birth cohort",
         "longitudinal study",
-        "longitudinal",
+        "longitudinal analysis",
         "longitudinal cohort",
-        "follow-up study",
+        "follow up study",
         "panel study",
     ],
     "Case-control": [
-        "case-control",
-        "matched case-control",
-        "nested case-control",
+        "case control",
+        "matched case control",
+        "nested case control",
     ],
     "Cross-sectional": [
-        "cross-sectional",
+        "cross sectional",
         "prevalence study",
         "baseline survey",
     ],
     "Ecological / Time-series": [
         "ecological study",
+        "ecological analysis",
         "time series",
-        "ts analysis",
     ],
     "Qualitative": [
-        "qualitative",
+        "qualitative study",
+        "qualitative research",
+        "qualitative analysis",
         "focus group",
         "thematic analysis",
         "ethnograph",
+        "grounded theory",
+        "semi structured interview",
     ],
 }
 KEYWORD_DESIGN_PATTERNS = {
@@ -270,22 +308,80 @@ def parse_keywords(val) -> list[str]:
     return [t.strip().lower() for t in toks if str(t).strip()]
 
 
-def assign_design_strict(row: pd.Series) -> str:
-    title = str(row.get("title", "")).lower()
-    abstract = str(row.get("abstract", "")).lower()
-    text_to_search = f"{title} {abstract}"
+def _assign_design_from_text(text: str) -> str:
+    """Return the highest-priority design group whose pattern is found in `text`.
 
+    `text` must already be normalised via normalize_text(). Returns "Other/None"
+    if no pattern matches, or if the text is empty.
+    """
+    if not text:
+        return "Other/None"
     for group in DESIGN_HIERARCHY:
-        patterns = STRICT_DESIGN_PATTERNS.get(group, [])
-        if any(pat in text_to_search for pat in patterns):
+        patterns = TITLE_ABSTRACT_PATTERNS.get(group, [])
+        if any(pat in text for pat in patterns):
             return group
     return "Other/None"
+
+
+def _all_designs_matching_text(text: str) -> list[str]:
+    """Return ALL design groups whose patterns match `text` (no hierarchy).
+
+    Used for diagnostics only: quantifies how often the hierarchy is masking
+    additional matches. Order preserved by DESIGN_HIERARCHY for stable output.
+    """
+    if not text:
+        return []
+    return [
+        group
+        for group in DESIGN_HIERARCHY
+        if any(pat in text for pat in TITLE_ABSTRACT_PATTERNS.get(group, []))
+    ]
+
+
+def _all_designs_matching_keywords(keywords: list[str]) -> list[str]:
+    """Return ALL design groups whose keyword patterns match any token."""
+    if not keywords:
+        return []
+    return [
+        group
+        for group in DESIGN_HIERARCHY
+        if any(
+            pat in tok
+            for tok in keywords
+            for pat in KEYWORD_DESIGN_PATTERNS.get(group, [])
+        )
+    ]
+
+
+def assign_design_title(row: pd.Series) -> str:
+    """Match design patterns against the title only."""
+    title_val = row.get("title")
+    title = "" if pd.isna(title_val) else str(title_val)
+    return _assign_design_from_text(normalize_text(title))
+
+
+def assign_design_abstract(row: pd.Series) -> str:
+    """Match design patterns against the abstract only."""
+    abstract_val = row.get("abstract")
+    abstract = "" if pd.isna(abstract_val) else str(abstract_val)
+    return _assign_design_from_text(normalize_text(abstract))
+
+
+def assign_design_strict(row: pd.Series) -> str:
+    """Match design patterns against title and abstract combined."""
+    title_val = row.get("title")
+    abstract_val = row.get("abstract")
+    title = "" if pd.isna(title_val) else str(title_val)
+    abstract = "" if pd.isna(abstract_val) else str(abstract_val)
+    return _assign_design_from_text(normalize_text(f"{title} {abstract}"))
 
 
 def assign_design_keywords(row: pd.Series) -> str:
     keywords = parse_keywords(row.get("keywords", ""))
     if not keywords:
         return "Other/None"
+    # Normalise each keyword token the same way we normalise patterns
+    keywords = [normalize_text(k) for k in keywords]
 
     for group in DESIGN_HIERARCHY:
         patterns = KEYWORD_DESIGN_PATTERNS.get(group, [])
@@ -297,8 +393,9 @@ def assign_design_keywords(row: pd.Series) -> str:
 def contains_any_term(val, terms) -> bool:
     if pd.isna(val):
         return False
-    text = str(val).lower()
-    return any(term in text for term in terms)
+    text = normalize_text(str(val))
+    norm_terms = [normalize_text(term) for term in terms]
+    return any(term in text for term in norm_terms)
 
 
 def detect_bold_policy_claims(text) -> bool:
@@ -315,9 +412,16 @@ def add_study_design_and_topics(df: pd.DataFrame) -> pd.DataFrame:
         raise KeyError(f"Missing required columns: {sorted(missing)}")
 
     out = df.copy()
-    out["llm_policy_claim"] = out["llm_policy_claim"].astype(bool)
+    # Robust boolean conversion: handles True/False, 1/0, "1"/"0", NaN.
+    # Not strictly needed for current upstream (already bool) but guards against
+    # silent breakage if 4_build_analysis_dataset.py ever writes strings.
+    out["llm_policy_claim"] = pd.to_numeric(
+        out["llm_policy_claim"], errors="coerce"
+    ).fillna(0).astype(bool)
     out["publication_year"] = pd.to_numeric(out["publication_year"], errors="coerce").astype("Int64")
 
+    out["design_title"] = out.apply(assign_design_title, axis=1)
+    out["design_abstract"] = out.apply(assign_design_abstract, axis=1)
     out["design_strict"] = out.apply(assign_design_strict, axis=1)
     out["design_keywords"] = out.apply(assign_design_keywords, axis=1)
     out["design_combined"] = np.where(
@@ -326,26 +430,137 @@ def add_study_design_and_topics(df: pd.DataFrame) -> pd.DataFrame:
         out["design_keywords"],
     )
 
+    # Sensitivity-analysis column: blank out rows where the strict (title+abstract)
+    # classifier matched 2+ designs simultaneously. Rationale: these are the only
+    # rows where the hierarchy tiebreaker actually affects design_combined, so
+    # excluding them lets you check that downstream findings aren't an artefact
+    # of hierarchy choices. Rows where strict returned Other/None and keywords
+    # filled in are NOT flagged — keywords only contribute when strict is silent,
+    # so there's no disagreement to sensitivity-test.
+    strict_match_counts = out.apply(
+        lambda r: len(
+            _all_designs_matching_text(
+                normalize_text(
+                    f"{'' if pd.isna(r.get('title')) else r.get('title')} "
+                    f"{'' if pd.isna(r.get('abstract')) else r.get('abstract')}"
+                )
+            )
+        ),
+        axis=1,
+    )
+    out["design_combined_unambiguous"] = np.where(
+        strict_match_counts >= 2,
+        "Other/None",
+        out["design_combined"],
+    )
+
     out["is_methodological"] = (
         out["title"].apply(lambda x: contains_any_term(x, METHOD_TERMS))
+        | out["abstract"].apply(lambda x: contains_any_term(x, METHOD_TERMS))
         | out["keywords"].apply(lambda x: contains_any_term(x, METHOD_TERMS))
     )
 
     out["is_excluded_sensitivity"] = (
         out["title"].apply(lambda x: contains_any_term(x, ALL_EXCLUDE_TERMS))
+        | out["abstract"].apply(lambda x: contains_any_term(x, ALL_EXCLUDE_TERMS))
         | out["keywords"].apply(lambda x: contains_any_term(x, ALL_EXCLUDE_TERMS))
     )
     out["is_policy_analysis_eval"] = (
         out["title"].apply(lambda x: contains_any_term(x, EXCLUDE_TERMS["Policy analysis/evaluation"]))
+        | out["abstract"].apply(lambda x: contains_any_term(x, EXCLUDE_TERMS["Policy analysis/evaluation"]))
         | out["keywords"].apply(lambda x: contains_any_term(x, EXCLUDE_TERMS["Policy analysis/evaluation"]))
     )
     out["is_methods_qe"] = (
         out["title"].apply(lambda x: contains_any_term(x, EXCLUDE_TERMS["Methods / quasi-experimental"]))
+        | out["abstract"].apply(lambda x: contains_any_term(x, EXCLUDE_TERMS["Methods / quasi-experimental"]))
         | out["keywords"].apply(lambda x: contains_any_term(x, EXCLUDE_TERMS["Methods / quasi-experimental"]))
     )
 
     out["bold_policy_claim"] = out["abstract"].apply(detect_bold_policy_claims)
     return out
+
+
+def report_hierarchy_overlap(df: pd.DataFrame) -> None:
+    """Report how often the DESIGN_HIERARCHY is masking additional matches.
+
+    For each of title, abstract, title+abstract, and keywords, computes the full
+    set of matching designs (no hierarchy) and reports:
+      - how many rows matched 0 / 1 / 2+ designs
+      - the most common multi-match combinations
+      - for rows with 2+ matches, which design the hierarchy kept vs. dropped
+
+    Purely diagnostic — does not modify the dataframe or the written CSV.
+    """
+
+    def _title(row):
+        val = row.get("title")
+        return "" if pd.isna(val) else str(val)
+
+    def _abstract(row):
+        val = row.get("abstract")
+        return "" if pd.isna(val) else str(val)
+
+    sources = {
+        "title": df.apply(
+            lambda r: _all_designs_matching_text(normalize_text(_title(r))), axis=1
+        ),
+        "abstract": df.apply(
+            lambda r: _all_designs_matching_text(normalize_text(_abstract(r))), axis=1
+        ),
+        "title+abstract (strict)": df.apply(
+            lambda r: _all_designs_matching_text(
+                normalize_text(f"{_title(r)} {_abstract(r)}")
+            ),
+            axis=1,
+        ),
+        "keywords": df.apply(
+            lambda r: _all_designs_matching_keywords(
+                [normalize_text(k) for k in parse_keywords(r.get("keywords", ""))]
+            ),
+            axis=1,
+        ),
+    }
+
+    print("\n" + "=" * 72)
+    print("HIERARCHY DIAGNOSTIC: how often does the hierarchy mask extra matches?")
+    print("=" * 72)
+
+    for source_name, matches in sources.items():
+        counts = matches.apply(len)
+        n_zero = int((counts == 0).sum())
+        n_one = int((counts == 1).sum())
+        n_multi = int((counts >= 2).sum())
+        total = len(counts)
+        pct_multi = (n_multi / total * 100) if total else 0.0
+
+        print(f"\n--- {source_name} ---")
+        print(
+            f"  0 matches: {n_zero}  |  1 match: {n_one}  |  "
+            f"2+ matches: {n_multi} ({pct_multi:.1f}% of rows)"
+        )
+
+        if n_multi == 0:
+            continue
+
+        multi = matches[counts >= 2]
+
+        # Most common multi-match combinations
+        combo_counts = (
+            multi.apply(lambda lst: " + ".join(lst)).value_counts().head(10)
+        )
+        print(f"  Top multi-match combinations (up to 10):")
+        for combo, n in combo_counts.items():
+            print(f"    {n:>5}  {combo}")
+
+        # What the hierarchy kept vs. what it dropped
+        kept_vs_dropped = (
+            multi.apply(lambda lst: f"kept {lst[0]}  (dropped: {', '.join(lst[1:])})")
+            .value_counts()
+            .head(10)
+        )
+        print(f"  Top 'kept vs. dropped' patterns (up to 10):")
+        for pattern, n in kept_vs_dropped.items():
+            print(f"    {n:>5}  {pattern}")
 
 
 def main() -> None:
@@ -370,8 +585,14 @@ def main() -> None:
 
     print(f"Loaded input dataset: {len(df)} rows")
     print(f"Wrote enriched dataset: {args.output_csv}")
-    print("\nStudy design counts:")
+    print("\nStudy design counts (title only):")
+    print(enriched["design_title"].value_counts(dropna=False))
+    print("\nStudy design counts (abstract only):")
+    print(enriched["design_abstract"].value_counts(dropna=False))
+    print("\nStudy design counts (combined):")
     print(enriched["design_combined"].value_counts(dropna=False))
+    print("\nStudy design counts (combined, unambiguous only — sensitivity):")
+    print(enriched["design_combined_unambiguous"].value_counts(dropna=False))
     print("\nSensitivity/topic flags:")
     for col in [
         "is_methodological",
@@ -382,6 +603,7 @@ def main() -> None:
     ]:
         print(f"  {col}: {int(enriched[col].sum())}")
 
+    report_hierarchy_overlap(enriched)
 
 if __name__ == "__main__":
     main()
