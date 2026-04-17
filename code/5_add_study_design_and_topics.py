@@ -5,8 +5,7 @@ Enriches the analysis dataset with study design and topic classifications.
 Two complementary methods are used to assign study design:
   - Strict (title/abstract): regex patterns matched against title and abstract
     text (e.g. "a cross-sectional study", "a randomised controlled trial").
-    In addition to the combined title+abstract match, separate columns are
-    produced for matches found in the title alone and the abstract alone.
+
   - Keywords: patterns matched against author-supplied keyword fields.
   A combined column prioritises the strict method and falls back to keywords.
 
@@ -20,7 +19,7 @@ Design categories: Experimental, Quasi-experimental, Cohort, Case-control,
 Cross-sectional, Qualitative, Ecological/Time-series, Other/None.
 
 Input:  data/analysis/analysis_dataset.csv
-Output: data/analysis/analysis_dataset_enriched.csv
+Output: data/analysis/analysis_dataset_enriched_v2.csv
 
 Run after: 4_build_analysis_dataset.py
 Run before: 6_make_review_sample.py
