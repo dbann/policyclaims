@@ -1,18 +1,13 @@
 #!/usr/bin/env python3
 """
-Generates samples for manual human validation of the LLM classification.
+Generates samples for manual human validation of the enriched analysis dataset.
 
 A subcommand is required. Usage:
 
-  python 6_make_review_sample.py cross-sectional
-      Draw 100 cross-sectional papers for manual review.
-      Exports a CSV with blank columns for a reviewer to fill in
-      (manual_is_cross_sectional, manual_unclear, manual_exclude, manual_notes).
-      Output: table/manual_review_cross_sectional_100.csv
-
-  python 6_make_review_sample.py cross-sectional-summary --review-csv <path>
-      Summarise a completed review CSV: counts confirmed, unclear, and excluded
-      records, and reports the claim rate among confirmed cross-sectional papers.
+  python 6_make_review_sample.py design-stratified
+      Draw 50 papers from each study design category in `design_combined`.
+      Exports a CSV with blank columns for a reviewer to fill in.
+      Output: table/manual_review_by_design_50_each.csv
 
   python 6_make_review_sample.py stratified
       Draw a stratified-by-year sample of 400 papers across 1990-2024.
@@ -21,11 +16,12 @@ A subcommand is required. Usage:
       Spearman trend check to confirm the sample mirrors the full dataset.
 
 Run after: 4_build_analysis_dataset.py and 5_add_study_design_and_topics.py
-Run before: 7_concordance.py (which computes inter-rater agreement on the reviewed samples)
+Run before: 7_concordance.py
 """
 from __future__ import annotations
 
 import argparse
+import sys
 from pathlib import Path
 
 import numpy as np
@@ -34,29 +30,16 @@ from scipy.stats import spearmanr
 
 
 ROOT = Path(__file__).resolve().parents[1]
-INPUT_CSV = ROOT / "data" / "analysis" / "analysis_dataset_enriched.csv"
+INPUT_CSV = ROOT / "data" / "analysis" / "analysis_dataset_enriched_v2.csv"
 TABLE_DIR = ROOT / "table"
 
 
-def _parse_bool_like(series: pd.Series) -> pd.Series:
-    truthy = {"1", "true", "t", "yes", "y", "confirmed"}
-    falsy = {"0", "false", "f", "no", "n", "excluded"}
-
-    def parse_one(value):
-        if pd.isna(value):
-            return pd.NA
-        if isinstance(value, bool):
-            return value
-        text = str(value).strip().lower()
-        if text == "":
-            return pd.NA
-        if text in truthy:
-            return True
-        if text in falsy:
-            return False
-        return pd.NA
-
-    return series.apply(parse_one).astype("boolean")
+def _display_path(path: Path) -> str:
+    """Return a repo-relative path string."""
+    try:
+        return str(Path(path).resolve().relative_to(ROOT))
+    except ValueError:
+        return str(path)
 
 
 def load_dataset(input_csv: Path) -> pd.DataFrame:
@@ -73,29 +56,43 @@ def load_dataset(input_csv: Path) -> pd.DataFrame:
     return df
 
 
-def make_cross_sectional_sample(
+def make_design_stratified_sample(
     df: pd.DataFrame,
-    n: int = 100,
+    n_per_design: int = 50,
     seed: int = 123,
     output_csv: Path | None = None,
 ) -> pd.DataFrame:
     if "design_combined" not in df.columns:
         raise KeyError("Column 'design_combined' is required.")
 
-    cross = df.loc[df["design_combined"].eq("Cross-sectional")].copy()
-    if len(cross) < n:
-        raise ValueError(f"Requested {n} rows but only found {len(cross)} cross-sectional rows.")
+    design_df = df.loc[df["design_combined"].notna()].copy()
+    design_df = design_df.loc[design_df["design_combined"].astype(str).str.strip() != ""].copy()
 
+    design_counts = design_df["design_combined"].value_counts().sort_index()
+    too_small = design_counts[design_counts < n_per_design]
+    if not too_small.empty:
+        raise ValueError(
+            "Not enough rows for some design categories: "
+            + ", ".join(f"{k}={v}" for k, v in too_small.items())
+        )
+
+    # Sample from each design group without using groupby.apply, which drops
+    # the grouping column in recent pandas versions.
+    sampled_parts = [
+        sub.sample(n=n_per_design, random_state=seed)
+        for _, sub in design_df.groupby("design_combined")
+    ]
     sampled = (
-        cross.sample(n=n, random_state=seed)
+        pd.concat(sampled_parts)
         .reset_index(drop=False)
         .rename(columns={"index": "source_row_index"})
+        .sample(frac=1, random_state=seed)
+        .reset_index(drop=True)
     )
-    sampled.insert(0, "review_id", [f"CS-{i:03d}" for i in range(1, len(sampled) + 1)])
-    sampled["manual_is_cross_sectional"] = ""
-    sampled["manual_unclear"] = ""
-    sampled["manual_exclude"] = ""
-    sampled["manual_notes"] = ""
+
+    sampled.insert(0, "review_id", [f"DES-{i:03d}" for i in range(1, len(sampled) + 1)])
+    sampled["manual_check1"] = ""
+    sampled["manual_check2"] = ""
 
     cols = [
         c for c in [
@@ -112,10 +109,8 @@ def make_cross_sectional_sample(
             "llm_policy_claim",
             "keywords",
             "abstract",
-            "manual_is_cross_sectional",
-            "manual_unclear",
-            "manual_exclude",
-            "manual_notes",
+            "manual_check1",
+            "manual_check2",
         ]
         if c in sampled.columns
     ]
@@ -126,38 +121,6 @@ def make_cross_sectional_sample(
         sampled.to_csv(output_csv, index=False)
 
     return sampled
-
-
-def summarize_confirmed_cross_sectional(review_csv: Path) -> tuple[pd.DataFrame, dict]:
-    reviewed = pd.read_csv(review_csv).copy()
-    reviewed["manual_is_cross_sectional_bool"] = _parse_bool_like(reviewed["manual_is_cross_sectional"])
-    reviewed["manual_unclear_bool"] = _parse_bool_like(reviewed["manual_unclear"])
-    if "manual_exclude" in reviewed.columns:
-        reviewed["manual_exclude_bool"] = _parse_bool_like(reviewed["manual_exclude"])
-    else:
-        reviewed["manual_exclude_bool"] = False
-
-    confirmed = reviewed.loc[
-        reviewed["manual_is_cross_sectional_bool"].eq(True)
-        & reviewed["manual_unclear_bool"].fillna(False).eq(False)
-        & reviewed["manual_exclude_bool"].fillna(False).eq(False)
-    ].copy()
-
-    if confirmed.empty:
-        raise ValueError("No confirmed cross-sectional rows remain after manual review.")
-
-    confirmed["llm_policy_claim"] = _parse_bool_like(confirmed["llm_policy_claim"]).fillna(False).astype(bool)
-    claim_rate = confirmed["llm_policy_claim"].mean()
-    summary = {
-        "n_reviewed_rows": int(len(reviewed)),
-        "n_confirmed_cross_sectional": int(len(confirmed)),
-        "n_unclear": int(reviewed["manual_unclear_bool"].fillna(False).sum()),
-        "n_excluded": int(reviewed["manual_exclude_bool"].fillna(False).sum()),
-        "n_claims_confirmed": int(confirmed["llm_policy_claim"].sum()),
-        "claim_rate_confirmed": float(claim_rate),
-        "claim_rate_confirmed_pct": float(claim_rate * 100),
-    }
-    return confirmed, summary
 
 
 def make_stratified_sample(
@@ -190,9 +153,12 @@ def make_stratified_sample(
     if too_small:
         raise ValueError(f"Not enough records in some years for the requested stratified sample: {too_small}")
 
+    stratified_parts = [
+        sub.sample(n=target_n_by_year[int(year)], random_state=seed)
+        for year, sub in sample_df.groupby("publication_year")
+    ]
     stratified = (
-        sample_df.groupby("publication_year", group_keys=False)
-        .apply(lambda g: g.sample(n=target_n_by_year[int(g.name)], random_state=seed))
+        pd.concat(stratified_parts)
         .sample(frac=1, random_state=seed)
         .reset_index(drop=True)
     )
@@ -264,22 +230,18 @@ def trend_check(df_full: pd.DataFrame, df_sample: pd.DataFrame) -> pd.DataFrame:
     return full_yearly.merge(sample_yearly, on="publication_year", how="left")
 
 
-def cmd_cross_sectional(args: argparse.Namespace) -> None:
+def cmd_design_stratified(args: argparse.Namespace) -> None:
     df = load_dataset(args.input_csv)
-    output_csv = args.output_csv or (TABLE_DIR / "manual_review_cross_sectional_100.csv")
-    sampled = make_cross_sectional_sample(df, n=args.n, seed=args.seed, output_csv=output_csv)
-    print(f"Exported {len(sampled)} rows to: {output_csv}")
-
-
-def cmd_cross_sectional_summary(args: argparse.Namespace) -> None:
-    review_csv = args.review_csv or (TABLE_DIR / "manual_review_cross_sectional_100.csv")
-    summary_csv = args.summary_csv or (TABLE_DIR / "manual_review_cross_sectional_100_summary.csv")
-    confirmed, summary = summarize_confirmed_cross_sectional(review_csv)
-    pd.DataFrame([summary]).to_csv(summary_csv, index=False)
-    print(f"Summary written to: {summary_csv}")
-    for k, v in summary.items():
-        print(f"{k}: {v}")
-    print(f"Confirmed rows retained: {len(confirmed)}")
+    output_csv = args.output_csv or (TABLE_DIR / "manual_review_by_design_50_each.csv")
+    sampled = make_design_stratified_sample(
+        df,
+        n_per_design=args.n_per_design,
+        seed=args.seed,
+        output_csv=output_csv,
+    )
+    print(f"Exported {len(sampled)} rows to: {_display_path(output_csv)}")
+    print("\nCounts by design in exported sample:")
+    print(sampled["design_combined"].value_counts().sort_index().to_string())
 
 
 def cmd_stratified(args: argparse.Namespace) -> None:
@@ -300,9 +262,9 @@ def cmd_stratified(args: argparse.Namespace) -> None:
     trend_csv = args.trend_csv or (TABLE_DIR / "supp_stratified_sample_400_trend_check.csv")
     trend.to_csv(trend_csv, index=False)
 
-    print(f"Saved blinded review file: {blinded_path}")
-    print(f"Saved internal check file: {internal_path}")
-    print(f"Saved trend check: {trend_csv}")
+    print(f"Saved blinded review file: {_display_path(blinded_path)}")
+    print(f"Saved internal check file: {_display_path(internal_path)}")
+    print(f"Saved trend check: {_display_path(trend_csv)}")
     print(f"Blinded rows: {len(blinded)}")
     print(f"Internal rows: {len(internal)}")
     print(f"Full analytic sample trend: rho={full_rho:.3f}, p={full_p:.4g}")
@@ -313,26 +275,24 @@ def main() -> None:
     parser = argparse.ArgumentParser(description="Generate review samples from the enriched analysis dataset.")
     sub = parser.add_subparsers(dest="cmd", required=True)
 
-    p1 = sub.add_parser("cross-sectional", help="Create the 100-paper cross-sectional manual review sample.")
+    p1 = sub.add_parser(
+        "design-stratified",
+        help="Create a manual review sample with 50 papers from each design_combined category.",
+    )
     p1.add_argument("--input-csv", type=Path, default=INPUT_CSV)
     p1.add_argument("--output-csv", type=Path, default=None)
-    p1.add_argument("--n", type=int, default=100)
+    p1.add_argument("--n-per-design", type=int, default=50)
     p1.add_argument("--seed", type=int, default=123)
-    p1.set_defaults(func=cmd_cross_sectional)
+    p1.set_defaults(func=cmd_design_stratified)
 
-    p2 = sub.add_parser("cross-sectional-summary", help="Summarize the completed cross-sectional review CSV.")
-    p2.add_argument("--review-csv", type=Path, default=None)
-    p2.add_argument("--summary-csv", type=Path, default=None)
-    p2.set_defaults(func=cmd_cross_sectional_summary)
-
-    p3 = sub.add_parser("stratified", help="Create a stratified 400-record blinded review sample.")
-    p3.add_argument("--input-csv", type=Path, default=INPUT_CSV)
-    p3.add_argument("--blinded-xlsx", type=Path, default=None)
-    p3.add_argument("--internal-xlsx", type=Path, default=None)
-    p3.add_argument("--trend-csv", type=Path, default=None)
-    p3.add_argument("--n", type=int, default=400)
-    p3.add_argument("--seed", type=int, default=20260327)
-    p3.set_defaults(func=cmd_stratified)
+    p2 = sub.add_parser("stratified", help="Create a stratified 400-record blinded review sample.")
+    p2.add_argument("--input-csv", type=Path, default=INPUT_CSV)
+    p2.add_argument("--blinded-xlsx", type=Path, default=None)
+    p2.add_argument("--internal-xlsx", type=Path, default=None)
+    p2.add_argument("--trend-csv", type=Path, default=None)
+    p2.add_argument("--n", type=int, default=400)
+    p2.add_argument("--seed", type=int, default=20260327)
+    p2.set_defaults(func=cmd_stratified)
 
     args = parser.parse_args()
     args.func(args)
