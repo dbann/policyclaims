@@ -33,6 +33,19 @@ ROOT = Path(__file__).resolve().parents[1]
 INPUT_CSV = ROOT / "data" / "analysis" / "analysis_dataset_enriched_v2.csv"
 TABLE_DIR = ROOT / "table"
 
+DESIGN_REVIEW_COLUMNS = [
+    "design_title",
+    "design_abstract",
+    "design_strict",
+    "design_keywords",
+    "design_combined",
+    "design_combined_unambiguous",
+    "is_methodological",
+    "is_excluded_sensitivity",
+    "is_policy_analysis_eval",
+    "is_methods_qe",
+]
+
 
 def _display_path(path: Path) -> str:
     """Return a repo-relative path string."""
@@ -103,9 +116,7 @@ def make_design_stratified_sample(
             "title",
             "journal",
             "publication_year",
-            "design_strict",
-            "design_keywords",
-            "design_combined",
+            *DESIGN_REVIEW_COLUMNS,
             "llm_policy_claim",
             "keywords",
             "abstract",
