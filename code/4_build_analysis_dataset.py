@@ -5,7 +5,7 @@ LLM classification labels.
 
 Steps:
   1. Loads all raw JSON files from data/json_files/ using the filter logic
-     in 2_filter_records.py (removes non-empirical content, duplicates, etc.).
+     in 2_filter_records.py (removes non-empirical content).
   2. Restricts to the 1990-2024 publication year window.
   3. Merges in LLM policy-claim labels from all_abstracts_LLM.csv,
      matching first on scopus_id then on DOI for any unmatched rows.

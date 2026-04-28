@@ -31,7 +31,7 @@ Preprint: https://www.medrxiv.org/content/10.1101/2025.11.13.25340175v1
 ## Data availability
 Due to licensing restrictions, the full set of Scopus abstracts cannot be shared; not all publishers enable free sharing of abstracts, see https://i4oa.org.  
 
-Derived datasets containing publicly available bibliographic metadata (DOI, title, journal, publication year, keywords, and corresponding author country) and large language model classifications are provided in `data/analysis/`, together with all analysis code in `code/`. Researchers with Scopus access can reproduce the complete corpus using the included identifiers.
+The shareable derived dataset is provided in `derived_data/`. It contains publicly available bibliographic metadata (DOI, title, journal, publication year, keywords, and corresponding author country) together with large language model classifications, but excludes full abstracts. The private `data/` directory contains licensed Scopus source files and intermediate analysis files with abstracts, and is not intended for redistribution. Researchers with Scopus access can reproduce the complete corpus using the included identifiers and code.
 
 ## Cost and time to process
 The cost and time to process such a large number of abstracts are dependent on the LLM compute / API costs; for the Deepseek API, for example, the analysis incurred ~$3 and ~10 hours of processing time. Since Deepseek is open-weight, this or other open-weight models can be run on local hardware with sufficiently high RAM. 
@@ -43,9 +43,10 @@ The cost and time to process such a large number of abstracts are dependent on t
 ```
 ├── code                  # data processing, LLM classification, validation, and analysis scripts
 ├── concordance           # repeated LLM run outputs for concordance analyses
-├── data
-│   ├── analysis          # derived analytic datasets
-│   └── json_files        # raw JSON files; not publicly available (requires SCOPUS access)
+├── data                  # private source/intermediate files; not shared because abstracts are licensed
+│   ├── analysis          # full analytic datasets with abstracts
+│   └── json_files        # Scopus JSON exports and filtered/LLM-labelled abstract files
+├── derived_data          # public/shareable derived metadata and LLM classifications
 ├── figures               # main and supplementary figures
 ├── table                 # validation files and exported main/supplementary tables
 └── docs
@@ -57,11 +58,13 @@ The cost and time to process such a large number of abstracts are dependent on t
 
 The analysis follows the sequence laid out in the `code/` directory:
 
+File provenance: Scopus JSON exports in `data/json_files/` are filtered by `code/2_filter_records.py` into `data/json_files/filtered/all_abstracts.json`; `code/3_run_llm_classification.py` adds policy-claim labels in `data/json_files/filtered/all_abstracts_LLM.csv`; `code/4_build_analysis_dataset.py` merges those labels and writes `data/analysis/analysis_dataset.csv`; `code/5_add_study_design_and_topics.py` adds design/topic variables in `data/analysis/analysis_dataset_enriched_v2.csv`, which is used for the main analyses.
+
 1. **Download metadata**  
    Query Scopus for each journal over 1990-2024 and save abstracts and metadata fields including publication year, keywords, citation counts, and corresponding author country.
 
 2. **Clean corpus**  
-  Restrict the dataset to research articles and remove non-empirical items, systematic reviews, and commentaries to produce a de-duplicated, analysis-ready corpus.
+  Restrict the dataset to research articles and remove non-empirical items, systematic reviews, and commentaries to produce an analysis-ready corpus.
 
 3. **Classify policy claims**  
    Run DeepSeek V3.1 at low temperature on each abstract using the study prompt and generate a binary indicator for the presence of a policy claim.
