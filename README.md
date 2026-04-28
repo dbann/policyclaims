@@ -48,9 +48,7 @@ The cost and time to process such a large number of abstracts are dependent on t
 │   └── json_files        # Scopus JSON exports and filtered/LLM-labelled abstract files
 ├── derived_data          # public/shareable derived metadata and LLM classifications
 ├── figures               # main and supplementary figures
-├── table                 # validation files and exported main/supplementary tables
-└── docs
-    └── paper_draft       # manuscript files
+└── table                 # validation files and exported main/supplementary tables
            
 ```
 
