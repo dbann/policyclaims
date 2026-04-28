@@ -10,8 +10,6 @@ __pycache__/
 *.pyc
 .DS_Store
 
-
-
 # Ignore virtual environments
 venv/
 .env
@@ -31,17 +29,14 @@ backup/
 #backup folder for code snippets
 /backup_codesnippets/
 
-
-#ignore data folder - files are too big for git
+#ignore data folder - files are too big for git + scopus doesn't allow full re-sharing
 data/
-
 
 json_files/data/processed_results_with_flags.csv
 json_files/processed_results_with_flags_truncated.json
 
 all_abstracts_LLM.json
 #all_abstracts_LLM.csv  - 80mb
-
 
 internal_notes.txt
 
