@@ -56,7 +56,7 @@ The cost and time to process such a large number of abstracts are dependent on t
 
 The analysis follows the sequence laid out in the `code/` directory:
 
-File provenance: Scopus JSON exports in `data/json_files/` are filtered by `code/2_filter_records.py` into `data/json_files/filtered/all_abstracts.json`; `code/3_run_llm_classification.py` adds policy-claim labels in `data/json_files/filtered/all_abstracts_LLM.csv`; `code/4_build_analysis_dataset.py` merges those labels and writes `data/analysis/analysis_dataset.csv`; `code/5_add_study_design_and_topics.py` adds design/topic variables in `data/analysis/analysis_dataset_enriched_v2.csv`, which is used for the main analyses.
+File provenance: Scopus JSON exports in `data/json_files/` are filtered by `code/2_filter_records.py` into `data/json_files/filtered/all_abstracts.json`; `code/3_run_llm_classification.py` adds policy-claim labels in `data/json_files/filtered/all_abstracts_LLM.csv`; `code/4_build_analysis_dataset.py` merges those labels and writes `data/analysis/analysis_dataset.csv`; `code/5_add_study_design_and_topics.py` adds design/topic variables in `data/analysis/analysis_dataset_enriched_v2.csv`, which is used for the main analyses. Earlier study-design classifier variants are archived in `code/study_design_supplemental/` for provenance and sensitivity checks.
 
 1. **Download metadata**  
    Query Scopus for each journal over 1990-2024 and save abstracts and metadata fields including publication year, keywords, citation counts, and corresponding author country.
