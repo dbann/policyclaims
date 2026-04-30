@@ -28,6 +28,9 @@ Preprint: https://www.medrxiv.org/content/10.1101/2025.11.13.25340175v1
 - Primary measures: Prevalence of policy claims by year, country, journal, keywords/topics, and study design.
 - Deliverables: Summary tables and figures for the manuscript and supplementary materials.
 
+### Use of AI coding assistants
+Multiple LLM coding assistants were used to support code drafting, refactoring, debugging, and code review/checking. These included Codex (GPT-5.5) and Claude Code (Claude Sonnet 4.6 and Claude Opus 4.7). The authors reviewed and retained responsibility for the analysis code, outputs, and interpretation.
+
 ## Data availability
 Due to licensing restrictions, the full set of Scopus abstracts cannot be shared; not all publishers enable free sharing of abstracts, see https://i4oa.org.  
 
